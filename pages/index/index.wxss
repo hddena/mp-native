@@ -1,4 +1,9 @@
 /**index.wxss**/
+
+
+c-swiper{
+  width: 100%;
+}
 .userinfo {
   display: flex;
   flex-direction: column;
@@ -19,3 +24,70 @@
 .usermotto {
   margin-top: 200px;
 }
+
+
+.iconList{
+  width: 100%;
+  line-height: 50px;
+  /* border-top:1px solid #000; */
+  border-bottom:1px solid #000;
+}
+.iconList > text{
+    color:#2782D7;
+}
+.homeNews{
+  width: 100%;
+  line-height: 50px;
+  /* border-top:1px solid #000; */
+  border-bottom:1px solid #000;
+}
+
+.homeMiaosha{
+  width: 100%;
+}
+.homeMiaosha .title{
+  width: 100%;
+}
+.homeMiaosha .content{
+  width: 100%;
+}
+/* 
+.homeMiaosha .imageBox ,.homeMiaosha .textCenter{
+  float: left;
+} */
+
+
+.imageBox {
+  width: 100%;
+  position: relative;
+  padding-top: 100%;
+  overflow: hidden;
+}
+.imageBox image{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+}
+/* 
+.imageBox {
+  width: 100%;
+  position: relative;
+  padding-top: 100%;
+  overflow: hidden;
+}
+.imageBox image{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+}
+ */

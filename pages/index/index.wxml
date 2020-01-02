@@ -1,5 +1,49 @@
 <!--index.wxml-->
 <view class="container">
+  <c-swiper></c-swiper>
+  <view class="iconList flexRow">
+    <text class="flexOne textCenter">正品保证</text>
+    <text class="flexOne textCenter">厂家直供</text>
+    <text class="flexOne textCenter">专属客服</text>
+    <text class="flexOne textCenter">大牌优惠</text>
+  </view>
+
+  <view class="iconList flexRow">
+    <text class="flexOne textCenter">营养保健</text>
+    <text class="flexOne textCenter">洗护用品</text>
+    <text class="flexOne textCenter">美妆护肤</text>
+    <text class="flexOne textCenter">0元购</text>
+    <text class="flexOne textCenter">每日签到</text>
+  </view>
+
+  <view class="homeNews flexRow">
+    <view class="flexOne textCenter">viewA</view>
+    <view class="flexOne textCenter">viewB</view>
+  </view>
+
+  <view class="homeMiaosha">
+    <view class="title">
+      <text>限时秒杀</text>
+      <text>2020.01.01</text>
+      <text>查看更多</text>
+    </view>
+
+    <view class="content flexRow">
+      <view class="flexOne" wx:for="{{miaosha}}" wx:key="{{index}}">
+          <view class="imageBox">
+            <image src="{{item.imgurl}}"></image>
+          </view>
+          <!-- <view class="textCenter">{{item.title}}</view> -->
+      </view>
+    </view>
+    <view class="content flexRow">
+      <view class="flexOne" wx:for="{{miaosha}}" wx:key="{{index}}">
+          <view class="textCenter">{{item.title}}</view>
+      </view>
+    </view>
+
+  </view>
+
   <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <block wx:else>
@@ -7,6 +51,7 @@
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
   </view>
+  <view bindtap="bushu">获取步数</view>
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>

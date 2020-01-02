@@ -7,27 +7,27 @@ Component({
         pagePath: "/pages/index/index",
         iconPath: "/images/tabBar/icon_component.png",
         selectedIconPath: "/images/tabBar/icon_component_HL.png",
-        text: "组件"
+        text: "乐趣步"
       }, {
         pagePath: "/pages/logs/logs",
         iconPath: "/images/tabBar/icon_API.png",
         selectedIconPath: "/images/tabBar/icon_API_HL.png",
-        text: "接口"
+        text: "乐社区"
       }, {
         pagePath: "/pages/logs/logs",
         iconPath: "/images/tabBar/icon_API.png",
         selectedIconPath: "/images/tabBar/icon_API_HL.png",
-        text: "AAA"
+        text: "乐惠商城"
       }, {
         pagePath: "/pages/logs/logs",
         iconPath: "/images/tabBar/icon_API.png",
         selectedIconPath: "/images/tabBar/icon_API_HL.png",
-        text: "BBB"
+        text: "购物车"
       }, {
         pagePath: "/pages/logs/logs",
         iconPath: "/images/tabBar/icon_API.png",
         selectedIconPath: "/images/tabBar/icon_API_HL.png",
-        text: "CCC"
+        text: "我"
       }]
   },
   attached() {
