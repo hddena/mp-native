@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "乐趣商城",
+  "usingComponents": {
+      "c-swiper": "../components/swiper/index"
+  }
+}

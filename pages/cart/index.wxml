@@ -1,0 +1,9 @@
+<wxs module="filter" src="../../libs/filter.wxs"></wxs>
+<!--index.wxml-->
+<view class="container">
+  <c-swiper></c-swiper>
+
+  <view>{{motto}}</view>
+
+  <van-toast id="van-toast" />
+</view>

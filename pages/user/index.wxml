@@ -1,0 +1,11 @@
+<wxs module="filter" src="../../libs/filter.wxs"></wxs>
+<!--index.wxml-->
+<!-- <view>AAAAAA</view> -->
+<view class="container">
+  <!-- <view>BBBBBB</view> -->
+  <navBar title="我的" background="#20CAB4" color="white" iconTheme="white" back="{{true}}"></navBar>
+  <!-- <view>CCCCCC</view> -->
+  <c-swiper></c-swiper>
+  <view>{{motto}}</view>
+  <van-toast id="van-toast" />
+</view>

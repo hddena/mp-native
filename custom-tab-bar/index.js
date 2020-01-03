@@ -4,9 +4,9 @@ Component({
     color: "#7A7E83",
     selectedColor: "#3cc51f",
     list: [{
-        pagePath: "/pages/index/index",
-        iconPath: "/images/tabBar/icon_component.png",
-        selectedIconPath: "/images/tabBar/icon_component_HL.png",
+        pagePath: "/pages/liqubu/index",
+        iconPath: "/images/tabBar/icon_API.png",
+        selectedIconPath: "/images/tabBar/icon_API_HL.png",
         text: "乐趣步"
       }, {
         pagePath: "/pages/logs/logs",
@@ -14,17 +14,17 @@ Component({
         selectedIconPath: "/images/tabBar/icon_API_HL.png",
         text: "乐社区"
       }, {
-        pagePath: "/pages/logs/logs",
-        iconPath: "/images/tabBar/icon_API.png",
-        selectedIconPath: "/images/tabBar/icon_API_HL.png",
+        pagePath: "/pages/store/index",
+        iconPath: "/images/tabBar/icon_component.png",
+        selectedIconPath: "/images/tabBar/icon_component_HL.png",
         text: "乐惠商城"
       }, {
-        pagePath: "/pages/logs/logs",
+        pagePath: "/pages/cart/index",
         iconPath: "/images/tabBar/icon_API.png",
         selectedIconPath: "/images/tabBar/icon_API_HL.png",
         text: "购物车"
       }, {
-        pagePath: "/pages/logs/logs",
+        pagePath: "/pages/user/index",
         iconPath: "/images/tabBar/icon_API.png",
         selectedIconPath: "/images/tabBar/icon_API_HL.png",
         text: "我"

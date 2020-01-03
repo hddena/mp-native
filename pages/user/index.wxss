@@ -1,0 +1,6 @@
+/**index.wxss**/
+
+c-swiper{
+  width: 100%;
+}
+

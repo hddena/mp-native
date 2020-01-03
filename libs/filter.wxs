@@ -1,0 +1,383 @@
+var filter = {
+
+    getPrice: function (x) {
+      return '￥'+x;
+    },
+
+    getNum: function (x) {
+      var f = parseFloat(x);
+      if (isNaN(f)) {
+        return false;
+      }
+      var f = Math.round(x * 100) / 100;
+      var s = f.toString();
+      var rs = s.indexOf('.');
+      if (rs < 0) {
+        rs = s.length;
+        s += '.';
+      }
+      while (s.length <= rs + 2) {
+        s += '0';
+      }
+      return '￥' + s;
+    },
+
+    getDate: function (value) {
+        if ((value + '').length < 13) value *= 1000;
+        var d = getDate(value);
+        // d.setTime(value);
+        var year = d.getFullYear();
+        var month = d.getMonth() + 1;
+        var day = d.getDate();
+        var timeStr = d.toTimeString();
+        var time = timeStr.substring(0, timeStr.indexOf('GMT'));
+        time = time.substring(0, time.length - 4);
+        var date = d.getDay();
+        if (month < 10) month = "0" + month;
+        if (day < 10) day = "0" + day;
+        var array = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
+        // var strDate = year + '-' + month + '-' + day + '(' + array[date] + ')' + ' ' + time;
+        var strDate = year + '-' + month + '-' + day +  ' ' + time;
+        return strDate;
+    },
+    getDay: function (value,type) {
+        if ((value + '').length < 13) value *= 1000;
+        var d = getDate(value);
+        // d.setTime(value);
+        var year = d.getFullYear();
+        var month = d.getMonth() + 1;
+        var day = d.getDate();
+        var timeStr = d.toTimeString();
+        var time = timeStr.substring(0, timeStr.indexOf('GMT'));
+        time = time.substring(0, time.length - 4);
+        var date = d.getDay();
+        if (month < 10) month = "0" + month;
+        if (day < 10) day = "0" + day;
+        var strDate = year + '-' + month + '-' + day;
+        if (type) strDate = year + '年' + month + '月' + day + '日';
+        return strDate;
+    },
+	getDateOrTime: function (value,type) {
+	    if ((value + '').length < 13) value *= 1000;
+	    var d = getDate(value);
+	    // d.setTime(value);
+	    var year = d.getFullYear();
+	    var month = d.getMonth() + 1;
+	    var day = d.getDate();
+	    var timeStr = d.toTimeString();
+	    var time = timeStr.substring(0, timeStr.indexOf('+'));
+	    time = time.substring(0, time.length - 4);
+	    var date = d.getDay();
+	    if (month < 10) month = "0" + month;
+	    if (day < 10) day = "0" + day;
+	    var array = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
+	    // var strDate = year + '-' + month + '-' + day + '(' + array[date] + ')' + ' ' + time;
+	    var strDate = year + '-' + month + '-' + day;
+		var strTime = time;
+		var strDateDot = year + '.' + month + '.' + day;
+		if(type==1){
+			return strDate
+		}else if(type==2){
+			return strTime
+		}else if(type==3){
+			return strDateDot
+		}
+	},
+    countDown: function(endTime, startTime, type) {
+        // return startTime;
+        function format(time) {
+            return time < 10 ? ('0' + time): time
+        }
+        var t = endTime - startTime;
+        var seconds = Math.floor( (t) % 60 );
+        var minutes = Math.floor( (t/60) % 60 );
+        var hours = Math.floor( (t/(60*60)) );
+
+        if (!type) {
+            return t >= 0 ? (format(hours) + ':' + format(minutes) + ':' + format(seconds)): '00:00:00';
+        } else if (type == 'h') {
+            return t >= 0 ? format(hours): '0';
+        } else if (type == 'm') {
+            return t >= 0 ? format(minutes): '0';
+        } else if (type == 's') {
+            return t >= 0 ? format(seconds): '0';
+        }
+    },
+    getPhoto: function (host, photo) {
+        if (photo) {
+            photo = photo.replace('//upload','/upload');
+            if (photo.indexOf('http') > -1) {
+                return photo;
+            } else {
+                return photo ? (host + photo) : '';
+            }
+        } else {
+            return '';
+        }
+    },
+    getAvatar: function (host, avatar) {
+        if (avatar) {
+            avatar = avatar.replace('//upload','/upload');
+            if (avatar.indexOf('http') > -1) {
+                return avatar;
+            } else {
+                return avatar ? (host + avatar) : '';
+            }
+        } else {
+            return 'https://app.yth-yx.com/mini/my_ythAvatar.png';
+        }
+    },
+    getLocalPhoto: function (path) {
+        var host = 'https://app.yth-yx.com/mini/';
+        return host + path;
+    },
+    getPlatform: function (flag) {
+        if (flag == 1) {
+            return '商城';
+        } else {
+            return '药房';
+        }
+    },
+    getOrderStatus: function (status) {
+        switch(status) {
+            case 'SYSTEM_CANCEL':
+                return '已取消';
+            case 'CUSTOMER_CANCEL':
+                return '已取消';
+            case 'WAIT_BUYER_PAY':
+                return '待付款';
+            case 'WAIT_GROUP':
+                return '等待成团';
+            case 'WAIT_SELLER_SEND_GOODS':
+                return '待发货';
+            case 'WAIT_CHECK':
+                return '待核销';
+            case 'WAIT_DELIVERY':
+                return '配送中';
+            case 'WAIT_BUYER_CONFIRM_GOODS':
+                return '待收货';
+            case 'EXPIRED':
+                return '已过期';
+            case 'TRADE_BUYER_SIGNED':
+                return '已签收';
+            case 'TRADE_FINISH':
+                return '已完成';
+			case 'CHECKED':
+                return '已核销';
+            case 'AFTERSALE_FINISH':
+                return '退款完成';    
+            default: 
+               return '';
+        }
+    },
+	getPlatformFlag: function (status) {// 平台标识
+	    switch(status) {
+	        case 1:
+	            return '商城';
+	        case 2:
+	            return '药房';
+	        default: 
+	           return '';
+	    }
+	},
+	getDeliveryType: function (status) {// 配送方式
+	    switch(status) {
+	        case 1:
+	            return '快递';
+	        case 2:
+	            return '自提';
+			case 3:
+				return '配送';
+			case 4:
+				return '配送';
+	        default: 
+	           return '';
+	    }
+	},
+    getStatus: function (status) {
+        switch(status) {
+            case  1:
+                return '进行中';
+            case 2:
+                return '达成';
+            default: 
+               return '未达成';
+        }
+    },
+    split: function (string) {
+        return string.split(',');
+    },
+    getComment: function (status) {
+        switch(status) {
+            case 1:
+                return '好评';
+            case 2:
+                return '中评';
+            default: 
+               return '差评';
+        }
+    },
+    getWithdrawStatus: function (status) {
+        switch(status) {
+            case 1:
+                return '处理中';
+            case 2:
+                return '通过';
+            default: 
+               return '驳回';
+        }
+    },
+    getCommissionIncome: function (status) {
+        switch(status) {
+            case 1:
+                return '一级佣金';
+            case 2:
+                return '二级佣金';
+            case 3:
+                return '分红';
+			case 4:
+			    return '提现';
+            default: 
+               return '';
+        }
+    },
+	getCommissionExpenditure: function (status) {
+	    switch(status) {
+	        case 1:
+	            return '提现';
+	        default: 
+	           return '';
+	    }
+	},
+    getIncomeType: function (status) {// 收入类型
+		switch(status) {
+			case 1:
+				return '充值';
+			case 2:
+				return '受赠';
+			case 3:
+				return '退款';
+			case 4:
+				return '养乐步任务达成奖励';
+			case 5:
+				return '一级乐友任务达成奖励';
+			case 6:
+                return '二级乐友任务达成奖励';
+            case 10:
+                return '门店签到奖励'; 
+            case 11:
+                return '任务签到奖励'; 
+            case 12:
+                return '绑定微信奖励';  
+            case 13:
+                return '绑定手机号奖励';  
+            case 14:
+                return '绑定门店奖励'; 
+            case 15:
+                return '绑定上级奖励'; 
+            case 16:
+                return '购买权益卡奖励';      				
+			default: 
+			   return '';
+		}
+	},
+	getExpenditureType: function (status) {// 支出类型
+		switch(status) {
+			case 1:
+				return '抵扣商品';
+			case 2:
+				return '福气核销';
+			case 3:
+				return '赠送给';
+			default: 
+			   return '系统扣除';
+		}
+	},
+	getId:function (str){
+        var news = str.substring(str.indexOf('：')+1,str.indexOf(' 用'));
+        if (str.indexOf('（')!= -1) {
+            news = str.substring(str.indexOf('（')+1,str.length-1);
+        }
+		return news
+    },
+    checkAfterOrderStatus: function (status) {
+        switch(status) {
+			case 1:
+				return '审核中';
+			case 2:
+				return '审核中';
+			case 3:
+                return '审核中';
+            case 4:
+                return '退款失败';
+            case 5:
+                return '退款失败';
+            case 6:
+                return '退款成功';    
+			default: 
+			   return '';
+		}
+    },
+    afterOrderType: function (type) {
+        switch(type) {
+			case 1:
+				return '仅退款';
+			case 2:
+				return '退货退款';
+			case 3:
+                return '换货';
+			default: 
+			   return '';
+		}
+    },
+    getLogiCompany: function (value) {
+        switch(value) {
+			case "SF":
+				return '顺丰快递';
+			case "STO":
+				return '申通快递';
+			case "TTKDEX":
+                return '天天快递';
+            case "YTO":
+                return '圆通快递';
+            case "EMS":
+                return 'EMS快递'; 
+            case "ZTO":
+                return '中通快递';
+            case "YUNDA":
+                return '韵达快递';           
+			default: 
+			   return '';
+		}
+    },
+    getOverString: function (string) {
+        if (string.length>6) {
+            return string.slice(0,5) + '..';
+        } else {
+            return string
+        }
+    },
+    limitedLength: function (value) {
+        if(value && value.length > 13) {
+           value = value.slice(0,13) + '...'
+        }
+        return value;
+    },
+    checkAfterOrder: function (status) {
+        switch(status) {
+			case 1:
+				return '售后中';
+			case 4:
+				return '审核不通过';
+			case 6:
+                return '审核通过';
+			default: 
+			   return '';
+		}
+    },
+    add: function(a,b) {
+        var c = (a + b).toFixed(2);
+        return c;
+    }
+};
+module.exports = filter;

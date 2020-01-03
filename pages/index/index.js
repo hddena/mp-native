@@ -2,41 +2,87 @@
 //获取应用实例
 const app = getApp()
 
+// import Toast from '../../components/vant-weapp/toast/toast';
+const toast = app.toast;
 const requestApi = app.requestApi.default;
-console.log(requestApi);
+console.log(requestApi.api);
+
+// console.log(toast);
 
 Page({
   data: {
+    //CountDown 倒计时
+    time: 96 * 60 * 60 * 1000,
+    timeData: {},
+    active: 0, // Tab 标签页
     //Request: requestApi.api.prototype, //请求头
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-
+    iconA: [
+      {
+        title: '正品保证',
+        icon: 'fire-o'
+      },
+      {
+        title: '厂家直供',
+        icon: 'star-o'
+      },
+      {
+        title: '专属客服',
+        icon: 'comment-o'
+      },
+      {
+        title: '大牌优惠',
+        icon: 'like-o'
+      },
+    ],
+    iconB:[
+      {
+        title: '营养保健',
+        icon:'gift-o'
+      },
+      {
+        title: '洗护用品',
+        icon: 'fire-o'
+      },
+      {
+        title: '美妆护肤',
+        icon: 'star-o'
+      },
+      {
+        title: '0元购',
+        icon: 'comment-o'
+      },
+      {
+        title: '每日签到',
+        icon: 'https://img11.360buyimg.com/n1/jfs/t1/82736/30/12363/411527/5d9c21b2Ea1ac09b6/d77d8dfa01ca0acd.jpg'
+      },
+    ],
     miaosha:[
       {
         title: 'AAA',
-        price:'100',
+        priceA: '100',
+        priceB: '200',
         imgurl:'https://img11.360buyimg.com/n1/jfs/t1/82736/30/12363/411527/5d9c21b2Ea1ac09b6/d77d8dfa01ca0acd.jpg'
       },
       {
         title: 'BBB',
-        price: '100',
+        priceA: '100',
+        priceB: '200',
         imgurl: 'https://img10.360buyimg.com/n1/jfs/t4435/235/3547441852/143410/41b99b0a/58ff0fe8N705a8cb2.jpg'
       },
       {
         title: 'CccCC',
-        price: '100',
+        priceA: '100',
+        priceB: '200',
         imgurl: 'https://img10.360buyimg.com/n1/jfs/t4111/9/19221110/103638/aa61d051/5837e828Nf5beecc5.jpg'
       },
       {
-        title: 'DDD',
-        price: '100',
-        imgurl: 'https://img12.360buyimg.com/n1/jfs/t1/86476/34/2064/262837/5dca4c00E97501fbd/35128e2c36e55e03.jpg'
-      },
-      {
-        title:'EEE',
-        price: '100',
+        title:'DDD',
+        priceA: '100',
+        priceB: '200',
         imgurl:'https://img.alicdn.com/imgextra/i3/876270265/O1CN01Yz1THT1DpPWc0SPk9_!!0-item_pic.jpg_430x430q90.jpg'
       }
     ]
@@ -96,7 +142,6 @@ Page({
   },
 
   indexClassList() {
-    console.log('indexClassList');
     var that = this;
     that.Request.indexClassList()
       .then(res => {
@@ -108,7 +153,11 @@ Page({
         console.log('indexClassList', res)
       })
   },
-
+  toastFn(){
+    console.log(toast);
+    // toast('成功文案');
+    // toast.success('成功文案');
+  },
   bushu(){
     // 获取用户过去三十天微信运动步数。需要先调用 wx.login 接口。步数信息会在用户主动进入小程序时更新。
     wx.getWeRunData({
@@ -120,6 +169,18 @@ Page({
         const cloudID = res.cloudID
       }
     })
+  },
+  onChangeCountDown(e) { //CountDown 倒计时
+    // console.log(e.detail);
+    this.setData({
+      timeData: e.detail
+    });
+  },
+  onChangeTab(event) {
+    wx.showToast({
+      title: `切换到标签 ${event.detail.name}`,
+      icon: 'none'
+    });
   }
 
 })

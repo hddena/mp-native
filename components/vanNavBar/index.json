@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+      "van-nav-bar": "../components/vant-weapp/nav-bar/index"
+  }
+}

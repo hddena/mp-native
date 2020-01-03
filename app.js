@@ -1,9 +1,11 @@
 //app.js
+// import toasta from '../components/vant-weapp/toast/toast';
+
 App({
   onLaunch: function () {
-    
-    this.requestApi = require('./utils/requestApi.js');
 
+    this.toast = require('./components/vant-weapp/toast/toast').default;
+    this.requestApi = require('./utils/requestApi.js');
     //console.log(requestApi);
 
     // 展示本地存储能力

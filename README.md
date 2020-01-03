@@ -30,6 +30,9 @@ https://www.jianshu.com/p/8aef9d6510f6
 mpvue 微信小程序 获取用户权限open-type="getUserInfo"
 https://blog.csdn.net/weixin_36934930/article/details/80706820
 
+模拟数据
+http://mockjs.com/
+
 # 生成 bundle 分析报告
 npm run build --report
 ```
