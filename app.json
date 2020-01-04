@@ -1,10 +1,12 @@
 {
   "pages": [
-    "pages/store/index",
+    "pages/user/index",
+    "pages/cart/index",
+    "pages/community/index",
+
     "pages/liqubu/index",
     "pages/logs/logs",
-    "pages/cart/index",
-    "pages/user/index"
+    "pages/store/index"
   ],
   "tabBar": {
     "custom": true,
@@ -18,7 +20,7 @@
         "text": "乐趣步"
       },
       {
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/community/index",
         "text": "乐社区"
       },
       {
@@ -55,7 +57,18 @@
     "van-loading": "./components/vant-weapp/loading/index",
     "van-tab": "./components/vant-weapp/tab/index",
     "van-tabs": "./components/vant-weapp/tabs/index",
+    "van-cell": "./components/vant-weapp/cell/index",
+    "van-cell-group": "./components/vant-weapp/cell-group/index",
+    "van-divider": "./components/vant-weapp/divider/index",
+    "van-notice-bar": "./components/vant-weapp/notice-bar/index",
+
+    "van-checkbox": "./components/vant-weapp/checkbox/index",
+    "van-checkbox-group": "./components/vant-weapp/checkbox-group/index",
+    "van-submit-bar": "./components/vant-weapp/submit-bar/index",
+    "van-card": "./components/vant-weapp/card/index",
+
     "mp-icon": "./components/weui/icon/icon",
     "mp-dialog": "./components/weui/dialog/dialog"
+
   }
 }

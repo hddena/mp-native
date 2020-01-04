@@ -5,5 +5,46 @@
 
   <view>{{motto}}</view>
 
+  <view class="notice">
+	<van-notice-bar
+	  left-icon="volume-o"
+	  mode="closeable"
+	  text="足协杯战线连续第2年上演广州德比战，上赛季半决赛上恒大以两回合5-3的总比分淘汰富力。"
+	/>
+  </view>
+
+
+<view class="cartList">
+  <van-checkbox-group
+    class="card-goods"
+    value="{{ checkedGoods }}"
+    bind:change="onChange"
+  >
+    <van-checkbox
+      class="card-goods__item"
+      wx:for="{{ goods }}"
+      wx:for-item="item"
+      wx:for-index="{{ item.id }}" 
+      wx:key="{{ item.id }}"
+
+      name="{{ item.id }}"
+    >
+      <van-card
+        title="{{ item.title }}"
+        desc="{{ item.desc }}"
+        num="{{ item.num }}"
+        price="{{ item.formatPrice }}"
+        thumb="{{ item.thumb }}"
+      />
+    </van-checkbox>
+  </van-checkbox-group>
+  <van-submit-bar
+    price="{{ totalPrice }}"
+    disabled="{{ !checkedGoods.length }}"
+    button-text="{{ submitBarText }}"
+    bind:submit="onSubmit"
+  />
+</view>
+
   <van-toast id="van-toast" />
 </view>

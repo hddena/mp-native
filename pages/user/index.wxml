@@ -7,5 +7,91 @@
   <!-- <view>CCCCCC</view> -->
   <c-swiper></c-swiper>
   <view>{{motto}}</view>
+
+  <view class="userInfo">
+  	<view class="left">
+  		<view>专属会员</view>
+  		<view>
+  			<open-data type="userAvatarUrl"></open-data>
+  			<view><text>性别：</text><open-data type="userGender" lang="zh_CN"></open-data></view>
+  			<view><text>昵称：</text><open-data type="userNickName" lang="zh_CN"></open-data></view>
+  		</view>
+  		<view>
+  			<text>用户昵称</text>
+  			<text>ID:510000</text>
+  		</view>
+  	</view>
+  	<view class="right">
+  		<view>
+	        <image
+	          style="width: 100px; height: 100px;"
+	          src="https://img11.360buyimg.com/n1/jfs/t1/82736/30/12363/411527/5d9c21b2Ea1ac09b6/d77d8dfa01ca0acd.jpg"
+	        />
+	        <text>绑手机号</text>
+  		</view>
+  		<view>
+	        <image
+	          style="width: 100px; height: 100px;"
+	          src="https://img11.360buyimg.com/n1/jfs/t1/82736/30/12363/411527/5d9c21b2Ea1ac09b6/d77d8dfa01ca0acd.jpg"
+	        />
+	        <text>分享海报</text>
+  		</view>
+  	</view>
+  </view>
+
+  <view class="profit">
+
+	<van-grid column-num="3" border="{{ false }}">
+
+	  <van-grid-item use-slot >
+	    <text>￥1.22</text>
+	    <text>我的收益</text>
+	  </van-grid-item>
+	  <van-grid-item use-slot >
+	    <text>555</text>
+	    <text>乐趣币</text>
+	  </van-grid-item>
+	  <van-grid-item use-slot >
+	    <text>98</text>
+	    <text>每日签到</text>
+	  </van-grid-item>
+	</van-grid>
+
+  </view>
+
+  <view class="orderState">
+	<van-grid column-num="5">
+	  <van-grid-item icon="gold-coin-o" text="待支付" />
+	  <van-grid-item icon="logistics" text="待发货" />
+	  <van-grid-item icon="gift-card-o" text="待收货" />
+	  <van-grid-item icon="smile-comment-o" text="待评价" />
+	  <van-grid-item icon="smile-o" text="售后" />
+	</van-grid>
+  </view>
+
+  <view class="toolsContainer">
+	<van-cell-group>
+	  <van-cell title="我的邀请人" is-link />
+	  <van-cell title="收益中心" is-link />
+	  <van-cell title="我的首页" is-link />
+	  <van-cell title="地址管理" is-link />
+	  <van-cell title="客服中心" is-link />
+	</van-cell-group>
+  </view>
+
+  <van-divider contentPosition="center">猜你可能还想要，我就帮你推荐了</van-divider>
+
+  <view class="recommend">
+	  <van-grid column-num="2" border="{{ false }}">
+	    <van-grid-item use-slot wx:for="{{ 6 }}" wx:for-item="index" wx:for-index="idx" wx:key="idx">
+	      <image
+	        style="width: 100%; height: 90px;"
+	        src="https://www.dongeejiao.com/upload/image/20180327/20180327113354_15060.jpg"
+	      />
+	      <text>猜:Title</text>
+	    </van-grid-item>
+	  </van-grid>
+  </view>
+
   <van-toast id="van-toast" />
 </view>

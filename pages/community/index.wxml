@@ -1,0 +1,56 @@
+<wxs module="filter" src="../../libs/filter.wxs"></wxs>
+<!--index.wxml-->
+<!-- <view>AAAAAA</view> -->
+<view class="container">
+  <!-- <view>BBBBBB</view> -->
+  <navBar title="{{motto}}" background="#ffffff" color="#000000" iconTheme="white" back="{{true}}"></navBar>
+  <!-- <view>CCCCCC</view> -->
+  <c-swiper></c-swiper>
+  <view>{{motto}}</view>
+
+  <view class="vanTabs">
+	<van-tabs active="{{ active }}" bind:change="onChange">
+	<van-tab title="广场">
+      <van-grid column-num="2" border="{{ false }}">
+        <van-grid-item use-slot wx:for="{{ 6 }}" wx:for-item="index" wx:for-index="idx" wx:key="idx">
+          <image
+            style="width: 100%; height: 90px;"
+            src="https://www.dongeejiao.com/upload/image/20180413/20180413161657_89164.png"
+          />
+          <text>广场:Title</text>
+        </van-grid-item>
+      </van-grid>
+	</van-tab>
+	<van-tab title="养生">
+      <van-grid column-num="2" border="{{ false }}">
+        <van-grid-item use-slot wx:for="{{ 6 }}" wx:for-item="index" wx:for-index="idx" wx:key="idx">
+          <image
+            style="width: 100%; height: 90px;"
+            src="https://www.dongeejiao.com/upload/image/20180413/20180413161657_89164.png"
+          />
+          <text>养生:Title</text>
+        </van-grid-item>
+      </van-grid>
+	</van-tab>
+	<van-tab title="专家讲坛">专家讲坛</van-tab>
+	<van-tab title="关注">关注</van-tab>
+	</van-tabs>
+  </view>
+
+
+  <van-divider contentPosition="center">猜你可能还想要，我就帮你推荐了</van-divider>
+
+  <view class="recommend">
+	  <van-grid column-num="2" border="{{ false }}">
+	    <van-grid-item use-slot wx:for="{{ 6 }}" wx:for-item="index" wx:for-index="idx" wx:key="idx">
+	      <image
+	        style="width: 100%; height: 90px;"
+	        src="https://www.dongeejiao.com/upload/image/20180327/20180327113354_15060.jpg"
+	      />
+	      <text>猜:Title</text>
+	    </van-grid-item>
+	  </van-grid>
+  </view>
+
+  <van-toast id="van-toast" />
+</view>

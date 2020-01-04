@@ -9,7 +9,7 @@ Component({
         selectedIconPath: "/images/tabBar/icon_API_HL.png",
         text: "乐趣步"
       }, {
-        pagePath: "/pages/logs/logs",
+        pagePath: "/pages/community/index",
         iconPath: "/images/tabBar/icon_API.png",
         selectedIconPath: "/images/tabBar/icon_API_HL.png",
         text: "乐社区"

@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "乐社区",
+  "enablePullDownRefresh": true,
+  "navigationStyle": "custom",
+  "usingComponents": {
+      "c-swiper": "../components/swiper/index",
+      "navBar": "/components/navBar/navBar"
+  }
+}

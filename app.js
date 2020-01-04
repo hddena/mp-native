@@ -4,10 +4,12 @@
 App({
   onLaunch: function () {
 
+    this.base = require('./libs/base.js');
+    
     this.toast = require('./components/vant-weapp/toast/toast').default;
     this.requestApi = require('./utils/requestApi.js');
-    //console.log(requestApi);
 
+    
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())

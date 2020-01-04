@@ -4,6 +4,11 @@
   <c-swiper></c-swiper>
   <vanbar/>
   <view>{{motto}}</view>
-
+  <view>
+  	<view wx:for="{{list}}" wx:for-index="idx" wx:key="idx">
+  		<text>{{item.title}}</text>
+        <image style="width: 100px; height: 100px;" src="{{item.img}}" />
+  	</view>
+  </view>
   <van-toast id="van-toast" />
 </view>

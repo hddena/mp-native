@@ -1,0 +1,10 @@
+/**index.wxss**/
+
+c-swiper{
+  width: 100%;
+}
+
+
+.vanTabs{
+	width: 100%;
+}

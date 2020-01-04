@@ -1,0 +1,29 @@
+<wxs module="filter" src="../../libs/filter.wxs"></wxs>
+<!--index.wxml-->
+<!-- <view>AAAAAA</view> -->
+<view class="container">
+  <!-- <view>BBBBBB</view> -->
+  <navBar title="我的" background="#20CAB4" color="white" iconTheme="white" back="{{true}}"></navBar>
+  <!-- <view>CCCCCC</view> -->
+  <c-swiper></c-swiper>
+  <view>{{motto}}</view>
+
+  <view></view>
+
+
+  <van-divider contentPosition="center">猜你可能还想要，我就帮你推荐了</van-divider>
+
+  <view class="recommend">
+	  <van-grid column-num="2" border="{{ false }}">
+	    <van-grid-item use-slot wx:for="{{ 6 }}" wx:for-item="index" wx:for-index="idx" wx:key="idx">
+	      <image
+	        style="width: 100%; height: 90px;"
+	        src="https://www.dongeejiao.com/upload/image/20180327/20180327113354_15060.jpg"
+	      />
+	      <text>猜:Title</text>
+	    </van-grid-item>
+	  </van-grid>
+  </view>
+
+  <van-toast id="van-toast" />
+</view>
