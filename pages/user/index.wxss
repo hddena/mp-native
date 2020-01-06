@@ -14,9 +14,37 @@ c-swiper{
 }
 .userInfo .left{
 	background-color: rgb(22, 183, 223);
+	padding: 10px;
+}
+.userInfo .left .userImg{
+	position: relative;
+	height: 70px;
+
+}
+.userInfo .left .userImg .userLevel{
+	position: absolute;
+	left: 0px;
+	bottom: -20px;
+	background-color: #e6bb19;
+	color: #fff;
+	text-align: center;
+	border-radius: 10px;
+	padding: 0px 5px;
+}
+.userInfo .left .userImg .userBox{
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	border:1px solid #666;
+	overflow: hidden;
+	
+}
+.userInfo .left .userText{
+	margin-top: 30px;
 }
 .userInfo .right{
 	background-color: #f00;	
+	padding: 10px;
 }
 .profit{
 	width: 100%;

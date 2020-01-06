@@ -1,0 +1,27 @@
+/**index.wxss**/
+
+c-swiper{
+  width: 100%;
+}
+
+
+.isLogin{
+	width: 100%;
+}
+
+.heightBox{
+	background-color: #ff0;
+	width: 100%;
+	height: 500px;
+}
+.bottomBox{
+	background-color: #f00;
+	width: 100%;
+	height: 55px;
+	border-bottom: 5px solid #00f;
+}
+
+.share , .share button{
+	width: 80%;
+}
+

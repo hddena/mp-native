@@ -50,3 +50,9 @@ tab-bar{
 	background-color: #666;
    display: none;
 }
+
+
+.van-submit-bar{
+  width: 100%;
+  padding-bottom: 80px;
+}

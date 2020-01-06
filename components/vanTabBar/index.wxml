@@ -1,0 +1,22 @@
+<van-tabbar active="{{ active }}" bind:change="onChange">
+  <van-tabbar-item icon="shop-o" bindtap="goToHome" class="tabbarItem">乐惠商城</van-tabbar-item>
+  <van-tabbar-item icon="friends-o" bindtap="goToCommunity" dot class="tabbarItem">乐社区</van-tabbar-item>
+  <van-tabbar-item icon="bulb-o" bindtap="goToLiqubu" info="5" class="yuanIcon">乐趣步</van-tabbar-item>
+  <van-tabbar-item icon="shopping-cart-o" bindtap="goToCart" info="20" class="tabbarItem">购物车</van-tabbar-item>
+  <van-tabbar-item info="3" class="tabbarItem" bindtap="goToUser">
+    <image
+      slot="icon"
+      src="https://avocode.com/static/images/blog/posts/41/hero.png"
+      mode="aspectFit"
+      style="width: 30px; height: 18px;"
+    />
+    <image
+      slot="icon-active"
+      src="https://avocode.com/static/images/microsites/zeplin-alternative/avoeater.png"
+      mode="aspectFit"
+      style="width: 30px; height: 18px;"
+    />
+    我的
+  </van-tabbar-item>
+
+</van-tabbar>

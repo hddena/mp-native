@@ -1,0 +1,43 @@
+<wxs module="filter" src="../../libs/filter.wxs"></wxs>
+<!--index.wxml-->
+<!-- <view>AAAAAA</view> -->
+<view class="container">
+  <!-- <view>BBBBBB</view> -->
+  <navBar title="我的" background="#20CAB4" color="white" iconTheme="white" back="{{true}}"></navBar>
+  <!-- <view>CCCCCC</view> -->
+  <c-swiper></c-swiper>
+
+  <view>{{motto}}</view>
+
+<view class="isLogin">
+
+<view><van-button type="primary" bindtap="login">登录</van-button></view>
+<view><van-button type="info" bindtap="checksession">登录是否过期</van-button></view>
+<view><van-button type="warning" open-type="getUserInfo" bindgetuserinfo="info">点击授权</van-button></view>
+
+<text>{{city}}</text>
+<text>{{country}}</text>
+<text>{{nickName}}</text>
+<text>{{province}}</text>
+
+</view>
+
+<view class="share">
+  <button open-type="share" class="btn-friendsShare btn-common" style="background-color: #fff;border: none;display: block;">
+  <!-- <image class="ui-wxImg" src="{{filter.getLocalPhoto('icon-wechat.png')}}"></image> -->
+  <image class="ui-wxImg" src="https://www.dongeejiao.com/upload/image/20180327/20180327182730_39304.png"></image>
+  <van-button type="danger" class="ui-wxText">分享好友</van-button>
+  </button>
+</view>
+
+
+<view class="heightBox">
+  heightBox
+</view>
+<view class="bottomBox">
+  bottomBox
+</view>
+  <vanTabBar/>
+
+  <van-toast id="van-toast" />
+</view>

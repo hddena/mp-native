@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/user/index",
+    "pages/isLogin/index",
+
     "pages/cart/index",
     "pages/community/index",
 
@@ -67,6 +69,10 @@
     "van-submit-bar": "./components/vant-weapp/submit-bar/index",
     "van-card": "./components/vant-weapp/card/index",
 
+    "van-tabbar": "./components/vant-weapp/tabbar/index",
+    "van-tabbar-item": "./components/vant-weapp/tabbar-item/index",
+
+    "van-loading": "./components/vant-weapp/loading/index",
     "mp-icon": "./components/weui/icon/icon",
     "mp-dialog": "./components/weui/dialog/dialog"
 

@@ -5,6 +5,11 @@
   display: table;
   content: "";
 }
+
+page{
+  padding-bottom:80px;
+}
+
 vanbar{
   width: 100%;
 }
@@ -152,3 +157,10 @@ button::after {
     border-style: none;
 }
 
+
+
+/*组件默认宽度*/
+
+proList , van-submit-bar{
+  width: 100%;
+}

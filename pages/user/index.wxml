@@ -10,32 +10,44 @@
 
   <view class="userInfo">
   	<view class="left">
-  		<view>专属会员</view>
-  		<view>
-  			<open-data type="userAvatarUrl"></open-data>
-  			<view><text>性别：</text><open-data type="userGender" lang="zh_CN"></open-data></view>
-  			<view><text>昵称：</text><open-data type="userNickName" lang="zh_CN"></open-data></view>
-  		</view>
-  		<view>
-  			<text>用户昵称</text>
+
+		<view class="userImg">
+			<view class="userBox"><open-data type="userAvatarUrl"></open-data></view>
+			<text class="userLevel">专属会员</text>
+		</view>
+		<!-- 
+		<view>
+			<text>性别：</text>
+			<open-data type="userGender" lang="zh_CN"></open-data>
+		</view>
+		<view>
+			<text>昵称：</text>
+			<open-data type="userNickName" lang="zh_CN"></open-data>
+		</view>
+		 -->
+
+  		<view class="userText">
+  			<view><open-data type="userNickName" lang="zh_CN"></open-data></view>
   			<text>ID:510000</text>
   		</view>
+
   	</view>
   	<view class="right">
-  		<view>
-	        <image
-	          style="width: 100px; height: 100px;"
-	          src="https://img11.360buyimg.com/n1/jfs/t1/82736/30/12363/411527/5d9c21b2Ea1ac09b6/d77d8dfa01ca0acd.jpg"
-	        />
-	        <text>绑手机号</text>
-  		</view>
-  		<view>
-	        <image
-	          style="width: 100px; height: 100px;"
-	          src="https://img11.360buyimg.com/n1/jfs/t1/82736/30/12363/411527/5d9c21b2Ea1ac09b6/d77d8dfa01ca0acd.jpg"
-	        />
-	        <text>分享海报</text>
-  		</view>
+
+
+	<view>
+		<van-button open-type="share" class="btn-friendsShare btn-common" style="background-color: #fff;border: none;display: block;">
+		<!-- <image class="ui-wxImg" src="{{filter.getLocalPhoto('icon-wechat.png')}}"></image> -->
+		<view><van-icon name="cluster-o" /></view>
+		<view>分享海报</view>
+		</van-button>
+	</view>
+
+	<view>
+		<view><van-icon name="phone-circle-o" /></view>
+		<view>绑手机号</view>
+	</view>
+
   	</view>
   </view>
 
@@ -76,11 +88,15 @@
 	  <van-cell title="我的首页" is-link />
 	  <van-cell title="地址管理" is-link />
 	  <van-cell title="客服中心" is-link />
+	  <van-cell title="检测登录" is-link bindtap="goToIsLogin"/>
 	</van-cell-group>
   </view>
 
   <van-divider contentPosition="center">猜你可能还想要，我就帮你推荐了</van-divider>
 
+  <proList/>
+
+<!-- 
   <view class="recommend">
 	  <van-grid column-num="2" border="{{ false }}">
 	    <van-grid-item use-slot wx:for="{{ 6 }}" wx:for-item="index" wx:for-index="idx" wx:key="idx">
@@ -92,6 +108,6 @@
 	    </van-grid-item>
 	  </van-grid>
   </view>
-
+ -->
   <van-toast id="van-toast" />
 </view>

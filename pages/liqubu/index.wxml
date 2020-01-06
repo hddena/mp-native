@@ -4,6 +4,17 @@
   <c-swiper></c-swiper>
   <vanbar/>
   <view>{{motto}}</view>
+
+
+<view>
+<button open-type="share" class="btn-friendsShare btn-common" style="background-color: #fff;border: none;display: block;">
+<!-- <image class="ui-wxImg" src="{{filter.getLocalPhoto('icon-wechat.png')}}"></image> -->
+<image class="ui-wxImg" src="https://www.dongeejiao.com/upload/image/20180327/20180327182730_39304.png"></image>
+<text class="ui-wxText">分享好友</text>
+</button>
+</view>
+
+
   <view>
   	<view wx:for="{{list}}" wx:for-index="idx" wx:key="idx">
   		<text>{{item.title}}</text>

@@ -47,5 +47,12 @@ Page({
     // toast('成功文案');
     // toast.success('成功文案');
   },
-
+  //页面跳转
+  goToIsLogin: function() {
+    console.log('goToIsLogin')
+    // wx.switchTab({
+    wx.navigateTo({
+      url: '../isLogin/index'
+    })
+  },
 })

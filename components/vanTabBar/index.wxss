@@ -1,0 +1,25 @@
+
+.container{
+	padding-bottom: 50px;
+}
+
+.tabbarItem{
+	background-color: #fff;
+	border-top: 1px solid #123456;
+}
+.yuanIcon {
+	border-top: 0px solid #123456;
+}
+
+.yuanIcon .van-tabbar-item{
+	margin-top: -30px;
+	color:#fff;
+	background-color: #f123ab;
+	border-radius: 50%;
+	border: 5px solid #123456;
+	overflow: hidden;
+	height: 80px;
+	width: 100%;
+	position: relative;
+	z-index: 10000;
+}
