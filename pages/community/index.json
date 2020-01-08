@@ -4,6 +4,8 @@
   "navigationStyle": "custom",
   "usingComponents": {
       "c-swiper": "../components/swiper/index",
-      "navBar": "/components/navBar/navBar"
+      "navBar": "/components/navBar/navBar",
+
+      "community-list": "../components/communityList/communityList"
   }
 }

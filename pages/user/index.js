@@ -6,9 +6,14 @@ const toast = app.toast;
 const requestApi = app.requestApi.default;
 // console.log(requestApi.api);
 
+// 模拟数据
+var mockApi = require('../../libs/mock/mockApi.js');
+// var mockApiData = require('../../libs/mock/mockApiData.js');
+
 Page({
   data: {
     motto: '用户中心',
+    productList:[],
   },
   //事件处理函数
   bindViewTap: function() {
@@ -17,7 +22,7 @@ Page({
     })
   },
   onLoad: function () {
-
+    this.getData();
   },
   onShow: function () {
     if (typeof this.getTabBar === 'function' &&
@@ -54,5 +59,15 @@ Page({
     wx.navigateTo({
       url: '../isLogin/index'
     })
+  },
+
+  getData(){
+    let t = this;
+    mockApi.productAjax('', function (res) {  //这里既可以获取模拟的res
+        t.setData({
+            productList:res.list
+        })
+        // console.log(t.data.productList);
+    });
   },
 })

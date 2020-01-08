@@ -6,10 +6,15 @@ const toast = app.toast;
 const requestApi = app.requestApi.default;
 // console.log(requestApi.api);
 
+// 模拟数据
+var mockApi = require('../../libs/mock/mockApi.js');
+// var mockApiData = require('../../libs/mock/mockApiData.js');
+
 Page({
   data: {
     motto: '乐社区',
-    active: 1
+    active: 1,
+    productList:[],
   },
   //事件处理函数
 
@@ -24,7 +29,7 @@ Page({
       })
     }
 
-    // this.indexClassList();
+    this.getData();
   },
 
   onChange(event) {
@@ -40,5 +45,13 @@ Page({
     // toast('成功文案');
     // toast.success('成功文案');
   },
-
+  getData(){
+    let t = this;
+    mockApi.productAjax('', function (res) {  //这里既可以获取模拟的res
+        t.setData({
+            productList:res.list
+        })
+        // console.log(t.data.productList);
+    });
+  },
 })

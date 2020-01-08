@@ -2,24 +2,81 @@
 <!--index.wxml-->
 <view class="container">
   <c-swiper></c-swiper>
-  <vanbar/>
+  <!-- <vanbar/> -->
   <view>{{motto}}</view>
+<!-- 
+  <view>
+    <button open-type="share" class="btn-friendsShare btn-common" style="background-color: #fff;border: none;display: block;">
+    <image class="ui-wxImg" src="{{filter.getLocalPhoto('icon-wechat.png')}}"></image>
+    <image class="ui-wxImg" src="https://www.dongeejiao.com/upload/image/20180327/20180327182730_39304.png"></image>
+    <text class="ui-wxText">分享好友</text>
+    </button>
+  </view>
+ -->
+  <view class="stepTapBox">
+    <view class="clockDial">
+        <view class="step">
+          <view>
+            <image src="../../images/renIcon.png" class="renIcon"/>
+          </view>
+          <view class="stepToday">今日步数</view>
+          <view class="stepNum">{{stepNum}}步</view>
+          <view class="stepTarget">目标步数：3000步</view>
+        </view>
+        <view class="Numerals"></view>
+        <view class="Numerals"></view>
+        <view class="Numerals"></view>
+        <view class="Numerals"></view>
+        <view class="Numerals"></view>
+        <view class="Numerals"></view>
+        <view class="Numerals"></view>
+        <view class="Numerals"></view>
+        <view class="Numerals"></view>
+        <view class="Numerals"></view>
+    </view>
+    <view class="stepSync"><van-button type="danger" bindtap="onStepSync">同步步数</van-button></view>
+  </view>
+  <view class="tip">
+      <view>温馨提示：开启提醒，不浪费每一天的步数</view>
+      <view><switch checked="{{switch1Checked}}" bindchange="switchChange"/></view>
+  </view>
+  <view class="profit">
+    <van-grid column-num="3" border="{{ false }}">
+      <van-grid-item use-slot >
+        <text>456币</text>
+        <text>乐趣币</text>
+      </van-grid-item>
+      <van-grid-item use-slot >
+        <text>55位</text>
+        <text>我的乐友</text>
+      </van-grid-item>
+      <van-grid-item use-slot >
+        <text>98天</text>
+        <text>完成天数</text>
+      </van-grid-item>
+    </van-grid>
+  </view>
 
-
-<view>
-<button open-type="share" class="btn-friendsShare btn-common" style="background-color: #fff;border: none;display: block;">
-<!-- <image class="ui-wxImg" src="{{filter.getLocalPhoto('icon-wechat.png')}}"></image> -->
-<image class="ui-wxImg" src="https://www.dongeejiao.com/upload/image/20180327/20180327182730_39304.png"></image>
-<text class="ui-wxText">分享好友</text>
-</button>
+<view class="ranking">
+  <van-tabs active="{{ active }}" bind:change="onRankingChange">
+    <van-tab title="-全国排行榜-">
+      <ranking title="全国排行榜"/>
+    </van-tab>
+    <van-tab title="-乐友排行榜-">
+      <ranking title="乐友排行榜"/>
+    </van-tab>
+  </van-tabs>
 </view>
-
-
+<!-- 
   <view>
   	<view wx:for="{{list}}" wx:for-index="idx" wx:key="idx">
   		<text>{{item.title}}</text>
         <image style="width: 100px; height: 100px;" src="{{item.img}}" />
   	</view>
   </view>
+   -->
+  <van-divider contentPosition="center">猜你可能还想要，我就帮你推荐了</van-divider>
+  <proList num="{{6}}" productList="{{productList}}"/>
+
   <van-toast id="van-toast" />
 </view>

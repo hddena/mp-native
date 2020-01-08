@@ -5,6 +5,6 @@
   "usingComponents": {
       "c-swiper": "../components/swiper/index",
       "navBar": "/components/navBar/navBar",
-      "proList": "/components/proList/proList"
+      "proList": "../components/proList/proList"
   }
 }

@@ -2,6 +2,8 @@
   "navigationBarTitleText": "乐趣步",
   "usingComponents": {
       "c-swiper": "../components/swiper/index",
-      "vanbar": "../components/vanNavBar/index"
+      "vanbar": "../components/vanNavBar/index",
+      "ranking": "../components/ranking/ranking",
+      "proList": "../components/proList/proList"
   }
 }

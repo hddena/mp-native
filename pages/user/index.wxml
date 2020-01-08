@@ -8,9 +8,10 @@
   <c-swiper></c-swiper>
   <view>{{motto}}</view>
 
+
+
   <view class="userInfo">
   	<view class="left">
-
 		<view class="userImg">
 			<view class="userBox"><open-data type="userAvatarUrl"></open-data></view>
 			<text class="userLevel">专属会员</text>
@@ -54,7 +55,6 @@
   <view class="profit">
 
 	<van-grid column-num="3" border="{{ false }}">
-
 	  <van-grid-item use-slot >
 	    <text>￥1.22</text>
 	    <text>我的收益</text>
@@ -68,11 +68,10 @@
 	    <text>每日签到</text>
 	  </van-grid-item>
 	</van-grid>
-
   </view>
 
   <view class="orderState">
-	<van-grid column-num="5">
+	<van-grid column-num="5" border="{{ false }}">
 	  <van-grid-item icon="gold-coin-o" text="待支付" />
 	  <van-grid-item icon="logistics" text="待发货" />
 	  <van-grid-item icon="gift-card-o" text="待收货" />
@@ -94,7 +93,7 @@
 
   <van-divider contentPosition="center">猜你可能还想要，我就帮你推荐了</van-divider>
 
-  <proList/>
+  <proList num="{{6}}" productList="{{productList}}"/>
 
 <!-- 
   <view class="recommend">

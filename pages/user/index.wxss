@@ -46,11 +46,15 @@ c-swiper{
 	background-color: #f00;	
 	padding: 10px;
 }
+
 .profit{
 	width: 100%;
 }
 .orderState{
 	width: 100%;
+}
+.orderState .van-icon{
+	color: #ff665c;
 }
 .toolsContainer{
 	width: 100%;

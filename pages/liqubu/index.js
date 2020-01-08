@@ -5,16 +5,18 @@ const app = getApp()
 const base = app.base;
 const toast = app.toast;
 const requestApi = app.requestApi.default;
-// console.log(requestApi.api);
-var mockApi = require('../../libs/mock/mockApi.js');
 
-// var mock = require('../../libs/mock/mock.js');
-var mockApiData = require('../../libs/mock/mockApiData.js');
+// 模拟数据
+var mockApi = require('../../libs/mock/mockApi.js');
+// var mockApiData = require('../../libs/mock/mockApiData.js');
 
 Page({
   data: {
     motto: '乐趣步',
-    list:[]
+    stepNum:3691,
+    productList:[],
+    active: 1,
+    switch1Change: false
   },
   //事件处理函数
   bindViewTap: function() {
@@ -23,25 +25,8 @@ Page({
     })
   },
   onLoad: function () {
-    //console.log(mockApi);
+    this.getData();
     console.log(base);
-        var that = this
-        // 使用 Mock
-        mockApi.ajax('', function (res) {
-            //这里既可以获取模拟的res
-            //console.log(res.data[0])
-            that.setData({
-                list:res.data
-            })
-        });
-        //console.log(this.data.list)
-        mockApi.indexAjax('', function (res) {
-            //这里既可以获取模拟的res
-            console.log(res.section2.list);
-            that.setData({
-                //list:res.data
-            })
-        });
 
   },
   onShow: function () {
@@ -65,6 +50,54 @@ Page({
       .catch(res => {
         //失败
         console.log('indexClassList', res)
+      })
+  },
+  getData(){
+    let t = this;
+    mockApi.productAjax('', function (res) {  //这里既可以获取模拟的res
+        t.setData({
+            productList:res.list
+        })
+        // console.log(t.data.productList);
+    });
+  },
+  onRankingChange(event) {
+    wx.showToast({
+      title: `切换到标签 ${event.detail.title}`,
+      icon: 'none'
+    });
+  },
+
+
+  switchChange (e) {
+    console.log(`switchChange发生change事件，携带值为`, e.detail);
+
+      if (e.detail.value) {
+        wx.showToast({
+          title: '=开=开=开=',
+        })
+      } else {
+        wx.showToast({
+          title: '-关-关-关-',
+        })
+      }
+    // var obj = {}
+    // obj[`switch1Checked`] = e.detail.value
+    // this.setData(obj)
+    // obj = {}
+    // obj[`switch${index}Style`] = e.detail.value ? '' : 'text-decoration: line-through'
+    // this.setData(obj)
+
+  },
+
+  onStepSync(){
+      console.log(this.data.stepNum);
+      let num = this.data.stepNum + 174;
+      this.setData({
+        stepNum:num
+      })
+      wx.showToast({
+        title: '同步成功！',
       })
   },
   toastFn(){

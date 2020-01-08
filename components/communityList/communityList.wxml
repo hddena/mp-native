@@ -4,15 +4,19 @@
 		<view class="imgBox">
 			<van-image
 			  width="100%"
-			  height="140"
+			  height="200"
 			  lazy-load
 			  class="proListItemImg"
 		      src="{{item.imgPath}}"
 		    />
 		</view>
 		<view>
-		    <view class="title">{{item.title}}</view>
-		    <view class="price"><text>￥</text><text>{{item.price}}</text><text>乐趣币抵￥79元</text></view>
+		    <view class="title">
+		    	<text>{{item.title}}</text>
+		    	<van-icon name="eye-o" />
+		    	<!-- <van-button icon="eye-o" type="primary">3214</van-button> -->
+		    </view>
+		    <view class="intro lineClamp">{{item.intro}}</view>
 		</view>
 	</view>
 

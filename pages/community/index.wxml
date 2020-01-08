@@ -8,6 +8,8 @@
   <c-swiper></c-swiper>
   <view>{{motto}}</view>
 
+  <community-list num="{{3}}" productList="{{productList}}"/>
+  
   <view class="vanTabs">
 	<van-tabs active="{{ active }}" bind:change="onChange">
 	<van-tab title="广场">

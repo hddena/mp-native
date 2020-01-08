@@ -1,6 +1,161 @@
 /**index.wxss**/
 
-c-swiper{
-  width: 100%;
+.stepTapBox:after{
+  clear: both;
+  display: table;
+  content: "";
+}
+.tip , .profit ,.stepTapBox{
+	width: 100%;
+}
+.stepTapBox{
+	min-height: 300px;
+	border:1px solid #f00;
 }
 
+.stepTapBox .step{
+	width: 180px;
+	height: 180px;
+	border-radius: 50%;
+	margin: 30px auto 20px auto;
+	border:5px solid #ff957f;
+	text-align: center;
+	padding: 12px 0px 50px 0px;
+	font-size: 120%;
+	font-weight: bold;
+}
+.stepTapBox .renIcon{
+	width: 18px;
+	height: 36px;
+}
+.stepTapBox .stepToday{
+	color: 	#999999;
+	font-size: 70%;
+}
+.stepTapBox .stepNum{
+	color: #3d3d3d;
+	font-size: 130%;
+}
+.stepTapBox .stepTarget{
+	color: #333333;
+	font-size: 70%;
+}
+.stepSync{
+	text-align: center;
+	width: 100%;
+}
+.profit{
+	border:1px solid #f00;
+}
+
+/*swtich整体大小及背景色*/
+.wx-switch-input{
+    width:82rpx !important;
+    height:36rpx !important;
+    background-color: #ff756c !important;
+    border: #50d2c2 !important; /* 2018-07-18 重置开关边框颜色 */
+}
+/*白色样式（false的样式）*/
+.wx-switch-input::before{
+    width:80rpx !important;
+    height: 36rpx !important;
+}
+/*绿色样式（true的样式）*/
+.wx-switch-input::after{
+    width: 40rpx !important;
+    height: 36rpx !important;
+}
+
+
+
+
+.box{
+    width: 500px;
+    height: 500px;
+    background-color: rgba(12,12,12,0.5);
+}
+
+.ranking .van-tabs__line{
+	display: none;
+}
+.ranking .van-tabs__nav{
+	/*background-image: url(https://app.yth-yx.com/mini/card__backgroud.png);*/
+	/*background-image: url(../../images/rankingBg.png);*/
+    background-size: cover;
+    /*background-image: linear-gradient(to top, #ffdd81 0%, #ffc781 30%, #ffdd81 100%);*/
+    background-color: #f6f6f6;
+}
+.ranking .van-tabs__nav .van-tab--active{
+	/*background-image: url(https://app.yth-yx.com/mini/card__backgroud.png);*/
+	/*background-image: url(../../images/rankingBg.png);*/
+	background-image: linear-gradient(to top, #ffdd81 0%, #ffc781 30%, #ffdd81 100%);
+    background-size: cover;
+    background-color: #ff0!important;
+    color: #c55300;
+    font-weight: bold;
+}
+
+
+
+.clockDial{/*--------底盘-------------*/
+ margin: 0px auto;
+ width:251px;
+ height:251px;
+ /*background:#333;*/
+ border-radius:100%;
+ /*box-shadow:0 0 15px #eee;*/
+ /*-webkit-transform:scale(0.6);*/
+ position: relative;
+padding-top: 1px;
+ /*background-color: rgba(12,0,0,0.5);*/
+ }
+
+ .Numerals{display:inline-block;z-index:3;}
+ .Numerals{/*--------10个刻度线 * 两端----主标签-------*/
+ position:absolute;
+ width:2px;height:216px;
+ top:11px;left:50%;
+ border-top:10px solid #ff957f;
+ border-bottom:10px solid #ff957f;
+ /*box-shadow:0 0 10px 1px #0000ff;*/
+ transform-origin:50% 50%; 
+ -webkit-transform-origin:50% 50%; 
+ }
+ .Numerals:before{/*--------10个刻度线 * 两端----副标签-------*/
+ content:" "; 
+ position:absolute;
+ width:2px;height:197px;
+ top:-10px;
+ border-top:10px solid #ff957f;
+ border-bottom:10px solid #ff957f;
+ transform:rotate(60deg);
+ -webkit-transform:rotate(60deg);
+ /*box-shadow:0 0 10px 1px #0000ff;*/
+ transform-origin:50% 50%; 
+ -webkit-transform-origin:50% 50%; 
+ }
+ .Numerals:after{/*--------10个刻度线 * 两端-----副标签------*/
+ content:" "; 
+ position:absolute;
+ width:2px;height:197px;
+ top:-10px;left:0px;
+ border-top:10px solid #ff957f;
+ border-bottom:10px solid #ff957f;
+ border-left:0px;
+ border-right:0px;
+ transform:rotate(120deg);
+ -webkit-transform:rotate(120deg);
+ /*box-shadow:0 0 10px 1px #0000ff;*/
+ transform-origin:50% 50%; 
+ -webkit-transform-origin:50% 50%; 
+ }
+ /*--------10个刻度线 * 3线 * 两端 ---方位-----------*/
+ .Numerals:nth-child(2){transform:rotate(6deg);-webkit-transform:rotate(6deg); }
+ .Numerals:nth-child(3){transform:rotate(12deg);-webkit-transform:rotate(12deg); }
+ .Numerals:nth-child(4){transform:rotate(18deg);-webkit-transform:rotate(18deg); }
+ .Numerals:nth-child(5){transform:rotate(24deg);-webkit-transform:rotate(24deg); }
+ .Numerals:nth-child(6){transform:rotate(30deg);-webkit-transform:rotate(30deg); }
+ .Numerals:nth-child(7){transform:rotate(36deg);-webkit-transform:rotate(36deg); }
+ .Numerals:nth-child(8){transform:rotate(42deg); -webkit-transform:rotate(42deg); }
+ .Numerals:nth-child(9){transform:rotate(48deg); -webkit-transform:rotate(48deg); }
+ .Numerals:nth-child(10){transform:rotate(54deg);-webkit-transform:rotate(54deg); }

@@ -1,0 +1,86 @@
+@import "../../libs/common.wxss";
+.ranking:after , .ranking .item:after{
+  clear: both;
+  display: table;
+  content: "";
+}
+
+.ranking {
+  width: 100%;
+  min-height: 250px;
+  border:1px solid #f00;
+  border-radius: 5px;
+}
+.ranking .item{
+  width: 100%;
+  min-height: 40px;
+  line-height: 40px;
+  border-radius: 5px;
+  padding: 1%;
+}
+
+.ranking .item:nth-of-type(2n + 0){
+  background-color: #f5f5f5;
+}
+.ranking .item .medal , .ranking .item .picBox , .ranking .item .nickName ,.ranking .item .stepNum{
+  display: inline-block;
+  float: left;
+
+}
+.ranking .item .medal{
+  width: 13%;
+  min-height: 40px;
+  line-height: 40px;
+  padding-top: 0px;
+  margin-top: 0px;
+  position: relative;
+}
+.ranking .item .medal image{
+  width: 18px;
+  height: 22px;
+  padding-top: 0px;
+  margin-top: 0px;
+}
+.ranking .item .picBox{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #666;
+  overflow: hidden;
+  margin-right: 10px;
+}
+.ranking .item .picBox open-data{
+
+}
+.ranking .item .nickName{
+  width: 50%;
+}
+.ranking .item .stepNum{
+  width: 20%;
+  color: #ff756c;
+}
+
+.ranking .item .price text:nth-child(2){
+  font-size: 120%;
+}
+.ranking .item .price text:last-child{
+  background-color: #fff0f1;
+  font-size: 70%;
+  padding: 0 1%;
+  margin-top: 5%;
+  border-radius: 3px;
+  float: right;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

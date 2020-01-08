@@ -26,7 +26,75 @@ let imgPathAll = [
     'https://www.dongeejiao.com/upload/image/20190722/20190722183650_58959.png',
     'https://www.dongeejiao.com/upload/image/20181127/20181127133907_89970.png'
 ];
+let proAll = [
+  {
+    title:'东阿阿胶',
+    imgPath:'https://www.dongeejiao.com/upload/image/20180413/20180413161657_89164.png'
+  },
+  {
+    title:'复方阿胶浆',
+    imgPath:'https://www.dongeejiao.com/upload/image/20180327/20180327162733_86873.png'
+  },
+  {
+    title:'桃花姬阿胶糕',
+    imgPath:'https://www.dongeejiao.com/upload/image/20181122/20181122143549_64466.png'
+  },
+  {
+    title:'东阿阿胶真颜小粉支',
+    imgPath:'https://www.dongeejiao.com/upload/image/20191016/20191016174322_69171.jpg'
+  },
+  {
+    title:'真颜小分子阿胶',
+    imgPath:'https://www.dongeejiao.com/upload/image/20180327/20180327182730_39304.png'
+  },
+  {
+    title:'东阿阿胶速溶块',
+    imgPath:'https://www.dongeejiao.com/upload/image/20181114/20181114194811_51258.png'
+  },
+  {
+    title:'冻干驴乳粉',
+    imgPath:'https://www.dongeejiao.com/upload/image/20181120/20181120115347_76971.png'
+  },
+  {
+    title:'海龙胶口服液',
+    imgPath:'https://www.dongeejiao.com/upload/image/20190722/20190722183650_58959.png'
+  },
+  {
+    title:'阿胶金丝枣(蓝帽子)',
+    imgPath:'https://www.dongeejiao.com/upload/image/20181127/20181127133907_89970.png'
+  }
+];
 
+function productAjax(data = '', fn, method = "get", header = {}) {
+    if (!DEBUG) {
+        wx.request({
+            url: config.API_HOST + data,
+            method: method ? method : 'get',
+            data: {},
+            header: header ? header : { "Content-Type": "application/json" },
+            success: function (res) {
+                fn(res);
+            }
+        });
+    } else {
+        // 模拟数据
+        var res = Mock.mock({
+          'list|10':[{
+              'title|1': titleAll,
+              'price|99-1000':100,
+              'original|999-10000':1000,
+              'intro': Random.paragraph(),
+              'imgPath|1':imgPathAll,
+              'id|+1': 1
+            }],
+            'banner':Random.image('400x100', '#b97cc9', '#FFF', 'png', 's2-banner')
+
+      })
+        // 输出结果
+       // console.log(JSON.stringify(res, null, 2))
+        fn(res);
+  }
+}
 function indexAjax(data = '', fn, method = "get", header = {}) {
     if (!DEBUG) {
         wx.request({
@@ -42,6 +110,18 @@ function indexAjax(data = '', fn, method = "get", header = {}) {
         // 模拟数据
         var res = Mock.mock({
 
+
+  'porListA|10':{
+    'list|10':[{
+        'title|1': titleAll,
+        'price|99-1000':100,
+        'original|999-10000':1000,
+        'intro': Random.paragraph(),
+        'imgPath|1':imgPathAll,
+        'id|+1': 1
+      }],
+      'banner':Random.image('400x100', '#b97cc9', '#FFF', 'png', 's2-banner')
+  },
   "swiper|4":[
     {
       'imgPath':Random.image('800x400', '#04a1f7', '#FFF', 'png', ''),
@@ -179,7 +259,8 @@ function detailApi(data = '', fn, method = "get", header = {}) {
 }
 
 module.exports = {
-    indexAjax:indexAjax,
-    ajax: ajax ,
-    detailApi: detailApi
+  productAjax:productAjax,
+  indexAjax:indexAjax,
+  ajax: ajax ,
+  detailApi: detailApi
 }

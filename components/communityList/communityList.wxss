@@ -1,3 +1,5 @@
+@import "../../libs/common.wxss";
+
 .proList:after{
   clear: both;
   display: table;
@@ -11,7 +13,7 @@
   border-radius: 5px;
 }
 .proList .item{
-  width: 48%;
+  width: 98%;
   min-height: 50px;
   border: 1px solid #eee;
   border-radius: 5px;
@@ -22,20 +24,7 @@
 .proList .item .title{
   font-size: 110%;
 }
-.proList .item .price text{
-  color: #ff5f55;
-}
-.proList .item .price text:nth-child(2){
-  font-size: 120%;
-}
-.proList .item .price text:last-child{
-  background-color: #fff0f1;
-  font-size: 70%;
-  padding: 0 1%;
-  margin-top: 5%;
-  border-radius: 3px;
-  float: right;
-}
+
 .proList .item .van-image{
   width: 100%;
 }

@@ -7,7 +7,9 @@ const toast = app.toast;
 const requestApi = app.requestApi.default;
 // console.log(requestApi.api);
 
-// console.log(toast);
+// 模拟数据
+var mockApi = require('../../libs/mock/mockApi.js');
+// var mockApiData = require('../../libs/mock/mockApiData.js');
 
 Page({
   data: {
@@ -20,6 +22,7 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    proList:[],
     iconA: [
       {
         title: '正品保证',
@@ -95,6 +98,16 @@ Page({
     })
   },
   onLoad: function () {
+    let t = this;
+
+    mockApi.productAjax('', function (res) {  //这里既可以获取模拟的res
+        t.setData({
+            proList:res.list
+        })
+        console.log(t.data.proList);
+    });
+
+
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
