@@ -1,0 +1,34 @@
+<view class="productTopList">
+
+	<view class="item " wx:for="{{ productTopList }}" wx:for-item="item"  wx:for-index="idx" wx:key="idx" wx:if="{{ idx < num }}" bindtap="readyProList" data-id="{{idx}}" data-title="{{item.titleA}}">
+
+		<view class="titleBig textCenter">
+			<view class="title textEllipsis">{{item.title}}</view>
+			<view class="intro textEllipsis">{{item.intro}}</view>
+		</view>
+
+		<view class="proBox">
+			<van-image
+			  width="100%"
+			  height="90"
+			  lazy-load
+			  fit="cover"
+		      src="{{item.imgPathA}}"
+		    />
+		    <view class="price"><text>￥</text><text>{{item.priceA}}</text></view>
+		</view>
+		<view class="proBox">
+			<van-image
+			  width="100%"
+			  height="90"
+			  lazy-load
+			  fit="cover"
+		      src="{{item.imgPathB}}"
+		    />
+		    <view class="price"><text>￥</text><text>{{item.priceB}}</text></view>
+		</view>
+
+
+	</view>
+
+</view>

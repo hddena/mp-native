@@ -1,39 +1,62 @@
 @import "../../libs/common.wxss";
 
-.proList:after{
+.communityList:after{
   clear: both;
   display: table;
   content: "";
 }
 
-.proList {
+.communityList {
   width: 100%;
   min-height: 250px;
   border:1px solid #f00;
   border-radius: 5px;
 }
-.proList .item{
+.communityList .item{
   width: 98%;
   min-height: 50px;
   border: 1px solid #eee;
   border-radius: 5px;
-  margin: 1%;
+  margin: 1% 1% 5% 1%;
   padding: 1%;
   float: left;
-}
-.proList .item .title{
-  font-size: 110%;
+
 }
 
-.proList .item .van-image{
+
+.communityList .item .van-image{
   width: 100%;
 }
-.proList .item .van-image image{
+.communityList .item .van-image image{
   width: 100%;
 }
+.communityList .item .title > view{
+  display: inline;
+}
+.communityList .item .title:first-child{
+  font-size: 100%;
+  line-height: 45px;
+}
 
+.communityList .item .title > view button{
+  color: #4195ff;
+  float: right;
+  width: 100px;
+  border:0px;
+}
+/*
+.communityList .item .title view:nth-child(2){
+  color: #4195ff;
+  float: right;
+}
 
-
+.communityList .item .title view:nth-child(2) van-icon{
+  font-size: 120%;
+}
+.communityList .item .title view:nth-child(2) text{
+  padding-left: 5px;
+}
+*/
 
 
 

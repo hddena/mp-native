@@ -6,13 +6,23 @@
   <!-- <van-button type="primary" click="bushu" bindtap="toastFn">按钮</van-button> -->
   <!-- <mp-icon type="field" icon="at" color="black" ></mp-icon> -->
   
+  <van-search 
+  class="search" 
+  value="{{ searchValue }}" 
+  placeholder="搜索你想要的商品" 
+  use-action-slot
+  bind:change="onChangeSearch"
+  bind:search="onSearch"
+  >
+    <view slot="action" bind:tap="onClickSearch">搜索</view>
+  </van-search>
 
   <view class="iconList flexRow">
     <view class="flexOne textCenter" wx:for="{{ iconA }}" wx:for-index="idx" wx:key="idx">
     <van-icon name="{{ item.icon }}"/><text>{{item.title}}</text></view>
   </view>
 
-    <van-grid  column-num="5" >
+    <van-grid class="iconTwo" column-num="5" border="{{ false }}" >
       <van-grid-item use-slot wx:for="{{ iconB }}" wx:for-index="idx" wx:key="idx">
         <view class="textCenter">
           <view><van-icon name="{{ item.icon }}"></van-icon></view>
@@ -27,9 +37,12 @@
     <view class="flexOne textCenter">viewB</view>
   </view>
 
-  <view class="homeMiaosha">
+  <view class="seckill">
     <view class="title">
-      <text>限时秒杀</text>
+      <view>限时秒杀</view>
+
+      <!-- <van-count-down time="{{ time }}" /> -->
+
       <van-count-down
         use-slot
         time="{{ time }}"
@@ -39,7 +52,8 @@
         <text class="item">{{ timeData.minutes }}</text>
         <text class="item">{{ timeData.seconds }}</text>
       </van-count-down>
-      <text>查看更多</text>
+
+      <view>查看更多</view>
     </view>
 
     <van-grid  column-num="4" >
@@ -63,6 +77,9 @@
       <view>买了又买的超值好货</view>
     </view>
     <view class="content">
+
+<proTopList num="{{3}}" productTopList="{{productTopList}}"/>
+<!-- 
           <van-grid column-num="2" border="{{ false }}">
             <van-grid-item use-slot wx:for="{{ 6 }}" wx:for-item="index" wx:for-index="idx" wx:key="idx">
               <image
@@ -72,6 +89,7 @@
               <text>热卖:Title</text>
             </van-grid-item>
           </van-grid>
+ -->
     </view>
   </view>
 
@@ -96,67 +114,27 @@
       <van-tabs active="{{ active }}" bind:change="onChangeTab">
         <van-tab title="热卖推荐">
         
-          <van-grid column-num="2" border="{{ false }}">
-            <van-grid-item use-slot wx:for="{{ 6 }}" wx:for-item="index" wx:for-index="idx" wx:key="idx">
-              <image
-                style="width: 100%; height: 90px;"
-                src="https://www.dongeejiao.com/upload/image/20180413/20180413161657_89164.png"
-              />
-              <text>热:Title</text>
-            </van-grid-item>
-          </van-grid>
+          <proList num="{{6}}" productList="{{productList}}"/>
 
         </van-tab>
         <van-tab title="聚优惠">
         
-          <van-grid column-num="2" border="{{ false }}">
-            <van-grid-item use-slot wx:for="{{ 6 }}" wx:for-item="index" wx:for-index="idx" wx:key="idx">
-              <image
-                style="width: 100%; height: 90px;"
-                src="https://www.dongeejiao.com/upload/image/20180327/20180327162733_86873.png"
-              />
-              <text>聚:Title</text>
-            </van-grid-item>
-          </van-grid>
+          <proList num="{{6}}" productList="{{productList}}"/>
 
         </van-tab>
         <van-tab title="新品上架">
         
-          <van-grid column-num="2" border="{{ false }}">
-            <van-grid-item use-slot wx:for="{{ 6 }}" wx:for-item="index" wx:for-index="idx" wx:key="idx">
-              <image
-                style="width: 100%; height: 90px;"
-                src="https://www.dongeejiao.com/upload/image/20181122/20181122143549_64466.png"
-              />
-              <text>新:Title</text>
-            </van-grid-item>
-          </van-grid>
+          <proList num="{{6}}" productList="{{productList}}"/>
 
         </van-tab>
         <van-tab title="便宜好货">
         
-          <van-grid column-num="2" border="{{ false }}">
-            <van-grid-item use-slot wx:for="{{ 6 }}" wx:for-item="index" wx:for-index="idx" wx:key="idx">
-              <image
-                style="width: 100%; height: 90px;"
-                src="https://www.dongeejiao.com/upload/image/20191016/20191016174322_69171.jpg"
-              />
-              <text>便:Title</text>
-            </van-grid-item>
-          </van-grid>
+          <proList num="{{6}}" productList="{{productList}}"/>
         
         </van-tab>
         <van-tab title="正品保价">
         
-          <van-grid column-num="2" border="{{ false }}">
-            <van-grid-item use-slot wx:for="{{ 6 }}" wx:for-item="index" wx:for-index="idx" wx:key="idx">
-              <image
-                style="width: 100%; height: 90px;"
-                src="https://www.dongeejiao.com/upload/image/20180327/20180327182730_39304.png"
-              />
-              <text>正:Title</text>
-            </van-grid-item>
-          </van-grid>
+          <proList num="{{6}}" productList="{{productList}}"/>
 
         </van-tab>
       </van-tabs>

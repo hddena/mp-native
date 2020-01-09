@@ -8,7 +8,7 @@ Component({
       value: 100,     // 属性初始值（可选），如果未指定则会根据类型选择一个
     },
 
-    productList: {    // 属性名
+    communityList: {    // 属性名
       type: Object,   // 类型（必填），目前接受的类型包括：String, Number, Boolean, Object, Array, null（表示任意类型）
       value: '',      // 属性初始值（可选），如果未指定则会根据类型选择一个
     },
@@ -40,7 +40,7 @@ Component({
   ctx: null,
   cache: {},
   ready () {
-    console.log(this.data.productList);
+    //console.log(this.data.communityList);
     wx.removeStorageSync('canvasdrawer_pic_cache')
     this.cache = wx.getStorageSync('canvasdrawer_pic_cache') || {}
     this.ctx = wx.createCanvasContext('canvasdrawer', this)
@@ -52,6 +52,7 @@ Component({
       //console.log(e.currentTarget.dataset);
       wx.showToast({
         title: title,
+        icon:'none'
       })
     },
 

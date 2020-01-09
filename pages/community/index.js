@@ -13,7 +13,8 @@ var mockApi = require('../../libs/mock/mockApi.js');
 Page({
   data: {
     motto: '乐社区',
-    active: 1,
+    active: 0,
+    communityList:[],
     productList:[],
   },
   //事件处理函数
@@ -47,11 +48,21 @@ Page({
   },
   getData(){
     let t = this;
+
+    mockApi.communityAjax('', function (res) {  //这里既可以获取模拟的res
+      // console.log(res);
+        t.setData({
+            communityList:res.list
+        })
+        // console.log(t.data.productList);
+    });
+
     mockApi.productAjax('', function (res) {  //这里既可以获取模拟的res
         t.setData({
             productList:res.list
         })
         // console.log(t.data.productList);
     });
+
   },
 })

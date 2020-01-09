@@ -1,0 +1,57 @@
+@import "../../libs/common.wxss";
+
+.productTopList:after{
+  clear: both;
+  display: table;
+  content: "";
+}
+
+.productTopList {
+  width: 100%;
+  min-height: 250px;
+  border:1px solid #f00;
+  border-radius: 5px;
+}
+.productTopList .item{
+  width: 98%;
+  min-height: 50px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  margin: 1%;
+  padding: 1%;
+  float: left;
+}
+.productTopList .item .titleBig , .productTopList .item .proBox{
+  float: left;
+}
+.productTopList .item .titleBig{
+  padding-top: 10%;
+  width: 33%;
+}
+.productTopList .item .titleBig .title{
+  color: #333333;
+  font-weight: bold;
+  font-size: 100%;
+}
+.productTopList .item .titleBig .intro{
+  color: #999999;
+  font-size: 80%;
+}
+.productTopList .item .proBox{
+  width: 33%;
+  padding:2%;
+}
+.productTopList .item .proBox .price{
+  color: #fb584d;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+

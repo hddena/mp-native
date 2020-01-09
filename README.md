@@ -35,6 +35,39 @@ http://mockjs.com/
 
 # 生成 bundle 分析报告
 npm run build --report
+
+# 微信小程序分享传递参数
+
+分享流程大致如下：
+1：在onShareAppMessage内设置分享参数
+2：在onLoad里获取分享参数，进行逻辑处理
+
+<button open-type='share'>分享</button>
+
+onLoad(options) {
+  //判断是否包含分享的参数
+  if (options != null && options != undefined &&
+    options.sharetype != null && options.sharetype > 0) {
+    var longitude = options.longitude;
+    var latitude = options.latitude;
+ 
+    //拿到经纬度，然后就处理自己逻辑，比如显示该位置地图
+  }
+},
+onShareAppMessage: function (res) {
+  //设置分享参数
+  var that = this;
+  var longitude = 114.0322103;
+  var latitude = 22.5353646;
+  return {
+    title: '位置收藏大师',
+    path: '/pages/home/home?sharetype=1&longitude=' + longitude + '&latitude=' + latitude
+  }
+}
+
+下拉刷新动画设置
+https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/wx.createAnimation.html
+
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

@@ -19,10 +19,12 @@ Page({
     active: 0, // Tab 标签页
     //Request: requestApi.api.prototype, //请求头
     motto: '乐趣商城',
+    searchValue: '',
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    proList:[],
+    productList:[],
+    productTopList:[],
     iconA: [
       {
         title: '正品保证',
@@ -63,7 +65,7 @@ Page({
         icon: 'https://img11.360buyimg.com/n1/jfs/t1/82736/30/12363/411527/5d9c21b2Ea1ac09b6/d77d8dfa01ca0acd.jpg'
       },
     ],
-    miaosha:[
+    seckill:[
       {
         title: 'AAA',
         priceA: '100',
@@ -97,16 +99,10 @@ Page({
       url: '../logs/logs'
     })
   },
-  onLoad: function () {
+  onLoad: function (options) {
+    // console.log(options);
     let t = this;
-
-    mockApi.productAjax('', function (res) {  //这里既可以获取模拟的res
-        t.setData({
-            proList:res.list
-        })
-        console.log(t.data.proList);
-    });
-
+    this.getData();
 
     if (app.globalData.userInfo) {
       this.setData({
@@ -136,6 +132,7 @@ Page({
     }
   },
   onShow: function () {
+
     if (typeof this.getTabBar === 'function' &&
       this.getTabBar()) {
       this.getTabBar().setData({
@@ -145,6 +142,37 @@ Page({
 
     // this.indexClassList();
   },
+
+//下拉刷新
+onPullDownRefresh:function(){
+  console.log('下拉刷新');
+  wx.showNavigationBarLoading() //在标题栏中显示加载
+  //模拟加载
+  setTimeout(function(){
+    // complete
+    wx.hideNavigationBarLoading() //完成停止加载
+    wx.stopPullDownRefresh() //停止下拉刷新
+    console.log('完成停止加载，停止下拉刷新！');
+  },1000);
+},
+
+  onChangeSearch(e) {
+    this.setData({
+      searchValue: e.detail
+    });
+  },
+
+  onSearch() {
+    Toast('搜索' + this.data.searchValue);
+  },
+
+  onClickSearch() {
+    wx.showToast({
+      title: '搜索：' + this.data.searchValue,
+      icon:'none'
+    })
+  },
+
   getUserInfo: function(e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
@@ -191,9 +219,23 @@ Page({
   },
   onChangeTab(event) {
     wx.showToast({
-      title: `切换到标签 ${event.detail.name}`,
+      title: `切换到标签 ${event.detail.title}`,
       icon: 'none'
     });
-  }
-
+  },
+  getData(){
+    let t = this;
+    mockApi.productTopAjax('', function (res) {  //这里既可以获取模拟的res
+        t.setData({
+            productTopList:res.list
+        })
+        console.log(t.data.productTopList);
+    });
+    mockApi.productAjax('', function (res) {  //这里既可以获取模拟的res
+        t.setData({
+            productList:res.list
+        })
+        // console.log(t.data.productList);
+    });
+  },
 })

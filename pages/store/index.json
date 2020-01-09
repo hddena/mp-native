@@ -1,6 +1,9 @@
 {
   "navigationBarTitleText": "乐趣商城",
+  "enablePullDownRefresh": true ,
   "usingComponents": {
-      "c-swiper": "../components/swiper/index"
+      "c-swiper": "../components/swiper/index",
+      "proList": "../components/proList/proList",
+      "proTopList": "../components/proTopList/proTopList"
   }
 }

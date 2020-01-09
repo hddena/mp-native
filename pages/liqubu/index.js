@@ -15,8 +15,9 @@ Page({
     motto: '乐趣步',
     stepNum:3691,
     productList:[],
-    active: 1,
-    switch1Change: false
+    active: 0,
+    switch1Change: false,
+    nickNameList:[]
   },
   //事件处理函数
   bindViewTap: function() {
@@ -60,6 +61,13 @@ Page({
         })
         // console.log(t.data.productList);
     });
+
+    mockApi.nickNameAjax('', function (res) {  //这里既可以获取模拟的res
+      console.log(res.list);
+        t.setData({
+            nickNameList:res.list
+        })
+    });
   },
   onRankingChange(event) {
     wx.showToast({
@@ -100,6 +108,13 @@ Page({
         title: '同步成功！',
       })
   },
+  rankingMoreBut(e) {
+    wx.showToast({
+      title: '更多数据加载中',
+      icon:'loading'
+    })
+  },
+
   toastFn(){
     console.log(toast);
     // toast('成功文案');

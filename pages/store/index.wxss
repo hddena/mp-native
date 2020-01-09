@@ -1,7 +1,7 @@
 /**index.wxss**/
 
 
-c-swiper{
+c-swiper ,.search , .iconList{
   width: 100%;
 }
 .userinfo {
@@ -27,7 +27,7 @@ c-swiper{
 
 
 .iconList{
-  width: 100%;
+
   line-height: 50px;
   /* border-top:1px solid #000; */
   border-bottom:1px solid #000;
@@ -35,6 +35,13 @@ c-swiper{
 .iconList > view{
     color:#2782D7;
 }
+.iconTwo{
+  width: 100%;
+}
+.iconTwo .van-grid-item__content{
+  padding: 10px 0px;
+}
+
 .homeNews{
   width: 100%;
   line-height: 50px;
@@ -42,13 +49,37 @@ c-swiper{
   border-bottom:1px solid #000;
 }
 
-.homeMiaosha{
+.seckill{
   width: 100%;
 }
-.homeMiaosha .title{
+.seckill .title{
   width: 100%;
 }
-.homeMiaosha .content{
+.seckill .title > view:first-child{
+  width: 40%;
+  color: #333333;
+  float: left;
+  font-size: 150%;
+}
+.seckill .title > van-count-down{
+  width: 40%;
+  padding-top: 1%;
+  float: left;
+}
+.seckill .title > van-count-down .item{
+  font-size: 130%;
+  padding: 3%;
+  width: auto;
+  min-width: 30px;
+  background-image: linear-gradient(206deg, #ff1414 0%, #ff665c 100%);
+}
+.seckill .title > view:last-child{
+  width: 20%;
+  color: #999999;
+  float: left;
+  line-height: 220%;
+}
+.seckill .content{
   width: 100%;
 }
 

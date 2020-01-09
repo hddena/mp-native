@@ -60,12 +60,13 @@
 <view class="ranking">
   <van-tabs active="{{ active }}" bind:change="onRankingChange">
     <van-tab title="-全国排行榜-">
-      <ranking title="全国排行榜"/>
+      <ranking title="全国排行榜" nickNameList="{{ nickNameList }}"/>
     </van-tab>
     <van-tab title="-乐友排行榜-">
-      <ranking title="乐友排行榜"/>
+      <ranking title="乐友排行榜" nickNameList="{{ nickNameList }}"/>
     </van-tab>
   </van-tabs>
+  <view class="rankingMoreBut" ><van-button bindtap="rankingMoreBut">查看更多排名 </van-button></view>
 </view>
 <!-- 
   <view>

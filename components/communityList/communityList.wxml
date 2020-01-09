@@ -1,20 +1,26 @@
-<view class="proList">
+<view class="communityList">
 
-	<view class="item" wx:for="{{ productList }}" wx:for-item="item"  wx:for-index="idx" wx:key="idx" wx:if="{{ idx < num }}" bindtap="readyProList" data-id="{{idx}}" data-title="{{item.title}}">
+	<view class="item" wx:for="{{ communityList }}" wx:for-item="item"  wx:for-index="idx" wx:key="idx" wx:if="{{ idx < num }}" bindtap="readyProList" data-id="{{idx}}" data-title="{{item.title}}">
 		<view class="imgBox">
 			<van-image
 			  width="100%"
 			  height="200"
+			  fit="cover"
 			  lazy-load
 			  class="proListItemImg"
 		      src="{{item.imgPath}}"
 		    />
 		</view>
-		<view>
+		<view class="textBox">
 		    <view class="title">
-		    	<text>{{item.title}}</text>
-		    	<van-icon name="eye-o" />
-		    	<!-- <van-button icon="eye-o" type="primary">3214</van-button> -->
+		    	<view>{{item.title}}</view>
+		    	<view>
+		    		<van-button type="default" icon="eye-o"> {{item.price}} </van-button>
+<!-- 
+			    	<van-icon name="eye-o" />
+			    	<text>{{item.price}}</text>
+ -->
+		    	</view>
 		    </view>
 		    <view class="intro lineClamp">{{item.intro}}</view>
 		</view>

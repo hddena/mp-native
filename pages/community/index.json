@@ -5,7 +5,7 @@
   "usingComponents": {
       "c-swiper": "../components/swiper/index",
       "navBar": "/components/navBar/navBar",
-
-      "community-list": "../components/communityList/communityList"
+      "community-list": "../components/communityList/communityList",
+      "proList": "../components/proList/proList"
   }
 }

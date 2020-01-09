@@ -3,17 +3,12 @@
 Component({
   properties: {
 
-    title: {          // 属性名
-      type: String,   // 类型（必填），目前接受的类型包括：String, Number, Boolean, Object, Array, null（表示任意类型）
-      value: '',     // 属性初始值（可选），如果未指定则会根据类型选择一个
-    },
-
     num: {      // 属性名
       type: Number,   // 类型（必填），目前接受的类型包括：String, Number, Boolean, Object, Array, null（表示任意类型）
       value: 100,     // 属性初始值（可选），如果未指定则会根据类型选择一个
     },
 
-    nickNameList: {    // 属性名
+    productTopList: {    // 属性名
       type: Object,   // 类型（必填），目前接受的类型包括：String, Number, Boolean, Object, Array, null（表示任意类型）
       value: '',      // 属性初始值（可选），如果未指定则会根据类型选择一个
     },
@@ -37,11 +32,15 @@ Component({
     width: 100,
     height: 100,
     index: 0,
+    imageList: [],
+    tempFileList: [],
+
+    isPainting: false
   },
   ctx: null,
   cache: {},
   ready () {
-    // console.log(this.data.nickNameList);
+    // console.log(this.data.productList);
     wx.removeStorageSync('canvasdrawer_pic_cache')
     this.cache = wx.getStorageSync('canvasdrawer_pic_cache') || {}
     this.ctx = wx.createCanvasContext('canvasdrawer', this)

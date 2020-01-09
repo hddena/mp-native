@@ -23,14 +23,48 @@ c-swiper , proList , van-submit-bar , .ranking{
   width: 100%;
 }
 
-page{
-  color: #3d3d3d;
-  padding-bottom:80px;
-}
+
 
 vanbar{
   width: 100%;
 }
+page{
+  color: #3d3d3d;
+  padding-bottom:80px;
+
+  box-sizing: border-box;
+  /* background-color: #F0F1F3; */
+}
+
+view,
+image,
+swiper,
+icon,
+text {
+    box-sizing: border-box;
+}
+
+button {
+    line-height: 1;
+    font-size: 0;
+    padding: 0;
+    border-radius: 0;
+}
+
+button::hover {
+    border-style: none;
+}
+
+button:after {
+    border-style: none;
+}
+
+button::after {
+    border-style: none;
+}
+
+
+
 .redRightRadius{
   width: 100%;
   padding: 3%;
@@ -114,39 +148,6 @@ vanbar{
   overflow: hidden;
 }
 
-
-
-page {
-    box-sizing: border-box;
-    /* background-color: #F0F1F3; */
-}
-
-view,
-image,
-swiper,
-icon,
-text {
-    box-sizing: border-box;
-}
-
-button {
-    line-height: 1;
-    font-size: 0;
-    padding: 0;
-    border-radius: 0;
-}
-
-button::hover {
-    border-style: none;
-}
-
-button:after {
-    border-style: none;
-}
-
-button::after {
-    border-style: none;
-}
 
 
 
