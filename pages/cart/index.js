@@ -1,14 +1,5 @@
-//index.js
-//获取应用实例
-const app = getApp()
-// import Toast from '../../components/vant-weapp/toast/toast';
-const toast = app.toast;
-const requestApi = app.requestApi.default;
-// console.log(requestApi.api);
-
 Page({
   data: {
-    mottom:'购物车',
     checkedGoods: ['1', '2', '3'],
     goods: [
       {
@@ -66,12 +57,7 @@ Page({
         selected: 3
       })
     }
-
-    // this.indexClassList();
   },
-
-
-
   onChange(event) {
     const { goods } = this.data;
     const checkedGoods = event.detail;
@@ -94,11 +80,4 @@ Page({
       icon: 'none'
     });
   },
-  toastFn(){
-    console.log(toast);
-    // toast('成功文案');
-    // toast.success('成功文案');
-  },
-
 });
-

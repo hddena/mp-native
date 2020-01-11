@@ -1,0 +1,14 @@
+{
+  "navigationBarTitleText": "商品详情",
+   "usingComponents": {
+    "van-image": "../components/vant-weapp/image/index",
+    "van-tag":"../components/vant-weapp/tag/index",
+    "van-cell": "../components/vant-weapp/cell/index",
+    "van-cell-group": "../components/vant-weapp/cell-group/index",
+    "van-goods-action": "../components/vant-weapp/goods-action/index",
+    "van-goods-action-icon": "../components/vant-weapp/goods-action-icon/index",
+    "van-goods-action-button": "../components/vant-weapp/goods-action-button/index",
+    "van-row": "../components/vant-weapp/row/index",
+    "van-col": "../components/vant-weapp/col/index"
+  }
+}

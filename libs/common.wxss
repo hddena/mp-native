@@ -19,7 +19,7 @@
 }
 
 /*默认 100% 宽度*/
-c-swiper , proList , van-submit-bar , .ranking{
+c-swiper , proList , van-submit-bar , .ranking ,bottom-line{
   width: 100%;
 }
 

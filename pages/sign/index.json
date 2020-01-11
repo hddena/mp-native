@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "用户中心",
+  "enablePullDownRefresh": true,
+  "navigationStyle": "custom",
+  "usingComponents": {
+      "c-swiper": "../components/swiper/index",
+      "navBar": "/components/navBar/navBar",
+      "proList": "../components/proList/proList",
+      "vanTabBar": "/components/vanTabBar/index",
+      "bottom-line": "/components/bottomLine/index"
+  }
+}

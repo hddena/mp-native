@@ -7,18 +7,31 @@ c-swiper{
 
 .userInfo{
 	width: 100%;
+	min-height: 150px;
+	background-image: linear-gradient(to top, #ed6a46 0%, #ffa49c 100%);
 }
 .userInfo .left ,.userInfo .right{
-	width: 50%;	
 	float: left;
+	font-size: 80%;
 }
 .userInfo .left{
-	background-color: rgb(22, 183, 223);
+	width: 60%;	
+}
+.userInfo .right{
+	width: 40%;	
+	border:1px solid #666;
+	padding: 2px;
+}
+.userInfo .left{
+	/*background-color: rgb(22, 183, 223);*/
+	border:1px solid #666;
 	padding: 10px;
 }
 .userInfo .left .userImg{
 	position: relative;
+	width: 42%;
 	height: 70px;
+	float: left;
 
 }
 .userInfo .left .userImg .userLevel{
@@ -30,25 +43,56 @@ c-swiper{
 	text-align: center;
 	border-radius: 10px;
 	padding: 0px 5px;
+	font-size: 80%;
 }
 .userInfo .left .userImg .userBox{
-	width: 70px;
-	height: 70px;
+	width: 60px;
+	height: 60px;
 	border-radius: 50%;
 	border:1px solid #666;
 	overflow: hidden;
 	
 }
 .userInfo .left .userText{
-	margin-top: 30px;
+	margin-top: 20px;
+	width: 55%;
+	float: left;
+	color: #fff;
 }
-.userInfo .right{
-	background-color: #f00;	
-	padding: 10px;
+.userInfo .left .userText > view{
+	font-size: 100%
+}
+.userInfo .left .userText > text{
+	font-size: 80%
 }
 
+.userInfo .right > view{
+	width: 50%;
+	overflow: hidden;
+	min-height: 80px;
+	float: left;
+}
+.userInfo .right .shareBut .van-button,.userInfo .right .phoneCircle .van-button{
+	width: 100%!important;
+	height: 100px;
+	color: #fff;
+	padding:1px 2px;
+	background-color: rgba(0,0,0,0);
+}
+.userInfo .right .shareBut .van-icon,.userInfo .right .phoneCircle .van-icon{
+	font-size: 200%;
+	font-weight: 400;
+}
+.userInfo .right .shareBut .van-button text,.userInfo .right .phoneCircle .van-button text{
+	font-size: 100%;
+	font-weight: 400;
+}
 .profit{
-	width: 100%;
+	width: 96%;
+	background-color: #fff;
+	margin: -5% auto 0px auto;
+	overflow: hidden;
+	border-radius: 5px;
 }
 .orderState{
 	width: 100%;

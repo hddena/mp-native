@@ -8,8 +8,6 @@
   <c-swiper></c-swiper>
   <view>{{motto}}</view>
 
-
-
   <view class="userInfo">
   	<view class="left">
 		<view class="userImg">
@@ -26,7 +24,6 @@
 			<open-data type="userNickName" lang="zh_CN"></open-data>
 		</view>
 		 -->
-
   		<view class="userText">
   			<view><open-data type="userNickName" lang="zh_CN"></open-data></view>
   			<text>ID:510000</text>
@@ -35,24 +32,36 @@
   	</view>
   	<view class="right">
 
-
 	<view>
-		<van-button open-type="share" class="btn-friendsShare btn-common" style="background-color: #fff;border: none;display: block;">
+		<van-button open-type="share" class="shareBut">
 		<!-- <image class="ui-wxImg" src="{{filter.getLocalPhoto('icon-wechat.png')}}"></image> -->
 		<view><van-icon name="cluster-o" /></view>
-		<view>分享海报</view>
+		<text>分享海报</text>
 		</van-button>
 	</view>
 
 	<view>
+<!-- 
 		<view><van-icon name="phone-circle-o" /></view>
 		<view>绑手机号</view>
+ -->
+		<van-button class="phoneCircle"  bind:click="onSorry">
+		<view><van-icon name="phone-circle-o" /></view>
+		<text>绑手机号</text>
+		</van-button>
+
 	</view>
 
   	</view>
   </view>
 
   <view class="profit">
+
+  <view class="orderState">
+	<van-cell-group>
+	  <van-cell title="我的订单" value="全部订单" is-link bindtap="goToIsLogin"/>
+	</van-cell-group>
+  </view>
 
 	<van-grid column-num="3" border="{{ false }}">
 	  <van-grid-item use-slot >
@@ -63,8 +72,8 @@
 	    <text>555</text>
 	    <text>乐趣币</text>
 	  </van-grid-item>
-	  <van-grid-item use-slot >
-	    <text>98</text>
+	  <van-grid-item use-slot  bindtap="goToSign">
+	    <text>{{goldNum}}</text>
 	    <text>每日签到</text>
 	  </van-grid-item>
 	</van-grid>

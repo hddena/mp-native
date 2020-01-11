@@ -25,7 +25,15 @@ c-swiper ,.search , .iconList{
   margin-top: 200px;
 }
 
-
+.hotSearchTags{
+  width: 100%;
+}
+.hotSearchTags text:first-child{
+  color: #ffaa00;
+}
+.hotSearchTags text{
+  margin-right: 10px;
+}
 .iconList{
 
   line-height: 50px;
@@ -35,19 +43,43 @@ c-swiper ,.search , .iconList{
 .iconList > view{
     color:#2782D7;
 }
-.iconTwo{
+.iconClass{
   width: 100%;
 }
-.iconTwo .van-grid-item__content{
+.iconClass .textCenter image{
+  width: 52px;
+  height: 52px;
+}
+.iconClass .van-grid-item__content{
   padding: 10px 0px;
 }
 
 .homeNews{
   width: 100%;
-  line-height: 50px;
   /* border-top:1px solid #000; */
   border-bottom:1px solid #000;
+  color: #fff;
 }
+.homeNews > view:first-child van-image , .homeNews > view:nth-child(2) van-image{
+  width: 100%;
+  height: 100px;
+
+}
+.homeNews > view:first-child , .homeNews > view:nth-child(2){
+  width: 100%;
+  min-height: 100px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 1%;
+}
+.homeNews > view:first-child{
+  background-color: #f0f;
+}
+
+.homeNews > view:nth-child(2){
+  background-color: #00f;
+}
+
 
 .seckill{
   width: 100%;

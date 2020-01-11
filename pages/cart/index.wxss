@@ -1,17 +1,17 @@
-/**index.wxss**/
-
-c-swiper{
+.container ,.container van-checkbox-group{
   width: 100%;
 }
-
-.notice{
-	width: 100%;
+.container van-submit-bar{
+  position: fixed;
+  bottom: 55px;
+  left: 0px;
 }
-
-.cartList{
-	width: 100%;
+.container .van-submit-bar{
+  position: relative;
 }
-
+.container .van-submit-bar .van-submit-bar__bar van-button{
+  width: auto;
+}
 .card-goods {
   padding: 10px 0;
   background-color: #fff;
@@ -39,20 +39,4 @@ c-swiper{
 
 .card-goods__item .van-card__price {
   color: #f44;
-}
-
-#van-toast{
-	margin-bottom: 60px;
-	width: 100%;
-	height: 70px;
-}
-tab-bar{
-	background-color: #666;
-   display: none;
-}
-
-
-.van-submit-bar{
-  width: 100%;
-  padding-bottom: 80px;
 }

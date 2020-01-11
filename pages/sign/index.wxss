@@ -1,0 +1,64 @@
+/**index.wxss**/
+
+
+
+.sign{
+	width: 100%;
+	min-height: 150px;
+	color: #fff;
+	background-image: linear-gradient(to top, #ed6a46 0%, #ffa49c 100%);
+}
+
+.goldNotice{
+	text-align: right;
+}
+.goldtext{
+	text-align: center;
+}
+.goldtext .van-icon{
+	font-size: 120%;
+	color: #ff0;
+	color: linear-gradient(141deg, #ffde52 0%, #ffffff 50%, #ffe269 100%);
+}
+.goldNum{
+	text-align: center;
+	font-size: 200%;
+}
+
+.signProgress{
+	min-height: 150px;
+	border: 1px solid #666;
+	padding:2%;
+	width: 96%;
+	background-color: #fff;
+	margin: -5% auto 0px auto;
+	overflow: hidden;
+	border-radius: 5px;
+}
+.signProgress > view:first-child{
+	text-align: center;
+	font-size: 120%;
+}
+.van-step--horizontal.van-step--process{
+	position: relative;
+}
+.van-step__title > view:last-of-type{
+	border: 1px solid #fff084;
+	background-color: #fffdbc;
+	color: #ffaa00;
+	text-align: center;
+	border-radius: 50%;
+	width: 35px;
+	height: 35px;
+	line-height: 35px;
+
+}
+.signBut{
+	text-align: center;
+}
+.signBut text{
+	color: #fff;
+	border-radius: 5px;
+	padding:5px 25px;
+	background-image: linear-gradient(to right, #fb6b13 0%, #fe2827 100%);
+}

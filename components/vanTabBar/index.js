@@ -17,11 +17,11 @@ Page({
   },
 
   //页面跳转
-  goToHome: function() {
-    console.log('goToHome')
-    // wx.switchTab({
-   	wx.navigateTo({
-      url: '../index/index'
+  goTolequbu: function() {
+    console.log('goTolequbu')
+    // wx.navigateTo({
+   	wx.switchTab({
+      url: '../lequbu/index'
     })
   },
   goToCommunity: function() {
@@ -31,11 +31,11 @@ Page({
       url: '../community/index'
     })
   },
-  goToLiqubu: function() {
-    console.log('goToLiqubu')
+  goToStore: function() {
+    console.log('goToStore')
     // wx.switchTab({
     wx.switchTab({
-      url: '../liqubu/index'
+      url: '../store/index'
     })
   },
   goToCart: function() {

@@ -17,15 +17,18 @@
     <view slot="action" bind:tap="onClickSearch">搜索</view>
   </van-search>
 
-  <view class="iconList flexRow">
-    <view class="flexOne textCenter" wx:for="{{ iconA }}" wx:for-index="idx" wx:key="idx">
-    <van-icon name="{{ item.icon }}"/><text>{{item.title}}</text></view>
-  </view>
-
-    <van-grid class="iconTwo" column-num="5" border="{{ false }}" >
+<view class="hotSearchTags">
+  <text>热搜:</text><text wx:for="{{ hotSearchTags }}" wx:for-index="idx" wx:key="idx">{{item}}</text>
+</view>
+    
+    <van-grid class="iconClass" column-num="5" border="{{ false }}" >
       <van-grid-item use-slot wx:for="{{ iconB }}" wx:for-index="idx" wx:key="idx">
         <view class="textCenter">
-          <view><van-icon name="{{ item.icon }}"></van-icon></view>
+          <view>
+            <image wx:if="{{idx<9}}" src="../../images/store/class-0{{idx+1}}.png"/>
+            <image wx:else src="../../images/store/class-{{idx+1}}.png"/>
+            <!-- <van-icon name="{{ item.icon }}"></van-icon> -->
+          </view>
           <text>{{item.title}}</text>
         </view>
       </van-grid-item>
@@ -33,8 +36,24 @@
 
 
   <view class="homeNews flexRow">
-    <view class="flexOne textCenter">viewA</view>
-    <view class="flexOne textCenter">viewB</view>
+    <view class="flexOne textCenter">
+      <van-image
+        width="100%"
+        height="100"
+        lazy-load
+        fit="cover"
+          src="https://m.360buyimg.com/babel/jfs/t1/89269/25/9432/340980/5e103235Efd1ba12f/67299c6a22f013ac.jpg"
+        />
+    </view>
+    <view class="flexOne textCenter">
+      <van-image
+        width="100%"
+        height="100"
+        lazy-load
+        fit="cover"
+          src="https://img30.360buyimg.com/sku/jfs/t1/61147/16/11649/295746/5d905a76Ec7511901/aed1fd238c63b0ed.jpg"
+        />
+    </view>
   </view>
 
   <view class="seckill">

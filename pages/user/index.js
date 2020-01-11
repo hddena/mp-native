@@ -13,6 +13,7 @@ var mockApi = require('../../libs/mock/mockApi.js');
 Page({
   data: {
     motto: '用户中心',
+    goldNum:6723,
     productList:[],
   },
   //事件处理函数
@@ -60,7 +61,14 @@ Page({
       url: '../isLogin/index'
     })
   },
-
+  goToSign: function() {
+    let t = this;
+    console.log(t.data.goldNum);
+    // wx.switchTab({
+    wx.navigateTo({
+      url: '../sign/index?goldNum=' + t.data.goldNum
+    })
+  },
   getData(){
     let t = this;
     mockApi.productAjax('', function (res) {  //这里既可以获取模拟的res
@@ -70,4 +78,12 @@ Page({
         // console.log(t.data.productList);
     });
   },
+  onSorry() {
+    console.log('暂无后续逻辑~');
+      wx.showToast({
+        title: '暂无后续逻辑~',
+        icon:'success'
+      })
+
+  }
 })

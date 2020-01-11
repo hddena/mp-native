@@ -1,14 +1,14 @@
 {
   "pages": [
-    
     "pages/store/index",
-    "pages/liqubu/index",
-
-    "pages/community/index",
-
-    "pages/user/index",
-    "pages/isLogin/index",
     "pages/cart/index",
+
+    "pages/goods/index",
+    "pages/sign/index",
+    "pages/user/index",
+    "pages/community/index",
+    "pages/lequbu/index",
+    "pages/isLogin/index",
     "pages/logs/logs"
   ],
   "tabBar": {
@@ -19,7 +19,7 @@
     "backgroundColor": "#ffffff",
     "list": [
       {
-        "pagePath": "pages/liqubu/index",
+        "pagePath": "pages/lequbu/index",
         "text": "乐趣步"
       },
       {
@@ -73,7 +73,7 @@
 
     "van-tabbar": "./components/vant-weapp/tabbar/index",
     "van-tabbar-item": "./components/vant-weapp/tabbar-item/index",
-
+    "van-steps": "./components/vant-weapp/steps/index",
     "van-loading": "./components/vant-weapp/loading/index",
     "mp-icon": "./components/weui/icon/icon",
     "mp-dialog": "./components/weui/dialog/dialog"

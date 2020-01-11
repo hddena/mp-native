@@ -1,6 +1,14 @@
 {
   "navigationBarTitleText": "购物车",
-  "usingComponents": {
-      "c-swiper": "../components/swiper/index"
+  "navigationStyle": "custom",
+   "usingComponents": {
+   	"navBar": "/components/navBar/navBar",
+    "van-checkbox": "../components/vant-weapp/checkbox/index",
+    "van-checkbox-group": "../components/vant-weapp/checkbox-group/index",
+    "van-submit-bar": "../components/vant-weapp/submit-bar/index",
+    "van-card": "../components/vant-weapp/card/index",
+
+    "proList": "../components/proList/proList"
+
   }
 }

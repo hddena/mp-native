@@ -1,0 +1,30 @@
+<wxs module="filter" src="../../libs/filter.wxs"></wxs>
+<!--index.wxml-->
+<!-- <view>AAAAAA</view> -->
+<view class="container">
+  <!-- <view>BBBBBB</view> -->
+  <navBar title="{{motto}}" background="#20CAB4" color="white" iconTheme="white" back="{{true}}"></navBar>
+  <!-- <view>CCCCCC</view> -->
+  <c-swiper></c-swiper>
+  <view>{{motto}}</view>
+
+  <view class="sign">
+  	<view class="goldNotice"><text bindtap="onSorry">规则</text>  |  <text bindtap="onSorry">明细</text></view>
+  	<view class="goldtext"><van-icon name="gem-o" /><text>乐趣币数量</text></view>
+  	<view class="goldNum">{{goldNum}}</view>
+  </view>
+  <view class="signProgress">
+    <view>签到乐趣币加倍</view>
+    <van-steps
+      steps="{{ steps }}"
+      active="{{ stepsActive }}"
+      active-icon="success"
+    />
+    <view class="signBut"><text bindtap="activeProgress">立即签到</text></view>
+  </view>
+  <van-divider contentPosition="center">猜你可能还想要，我就帮你推荐了</van-divider>
+  <proList num="{{6}}" productList="{{productList}}"/>
+  <bottom-line />
+  <vanTabBar/>
+  <van-toast id="van-toast" />
+</view>

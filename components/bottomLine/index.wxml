@@ -1,0 +1,3 @@
+<view class="container">
+    <van-divider hairline contentPosition="center">{{contentText}}</van-divider>
+</view>

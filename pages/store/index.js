@@ -25,6 +25,8 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     productList:[],
     productTopList:[],
+    hotSearchTags:['阿胶','桃花姬','固原胶','阿胶片','补血','固原糕'],
+    advertisement:['left','right'],
     iconA: [
       {
         title: '正品保证',
@@ -46,24 +48,44 @@ Page({
     iconB:[
       {
         title: '营养保健',
-        icon:'gift-o'
+        icon:'location-o'
       },
       {
-        title: '洗护用品',
-        icon: 'fire-o'
+        title: '日用品',
+        icon: 'like-o'
       },
       {
-        title: '美妆护肤',
+        title: '限时抢卷',
         icon: 'star-o'
       },
       {
+        title: '每日签到',
+        icon: 'phone-o'
+      },
+      {
+        title: '扫一扫',
+        icon: 'https://www.dongeejiao.com/upload/image/20180327/20180327182730_39304.png'
+      },
+      {
         title: '0元购',
+        icon:'setting-o'
+      },
+      {
+        title: '超值拼团',
+        icon: 'fire-o'
+      },
+      {
+        title: '每日领币',
+        icon: 'coupon-o'
+      },
+      {
+        title: '权益专场',
         icon: 'comment-o'
       },
       {
-        title: '每日签到',
+        title: '领红包',
         icon: 'https://img11.360buyimg.com/n1/jfs/t1/82736/30/12363/411527/5d9c21b2Ea1ac09b6/d77d8dfa01ca0acd.jpg'
-      },
+      }
     ],
     seckill:[
       {
@@ -167,10 +189,17 @@ onPullDownRefresh:function(){
   },
 
   onClickSearch() {
-    wx.showToast({
-      title: '搜索：' + this.data.searchValue,
-      icon:'none'
-    })
+    if (this.data.searchValue == '') {
+      wx.showToast({
+        title: '请输入搜索内容',
+        icon:'none'
+      })
+    } else {
+      wx.showToast({
+        title: '搜索：' + this.data.searchValue,
+        icon:'none'
+      })
+    }
   },
 
   getUserInfo: function(e) {

@@ -8,3 +8,7 @@ c-swiper{
 .vanTabs{
 	width: 100%;
 }
+.vanTabs .van-tabs__wrap .van-tab--active .van-ellipsis{
+	color: #f00;
+	font-weight: bold;
+}
