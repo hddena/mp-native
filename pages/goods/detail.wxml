@@ -3,7 +3,9 @@
     <van-image
       height="414"
       width="100%"
-      src="{{ goods.thumb }}"
+      fit="cover"
+      lazy-load
+      src="{{ goods.imgPath }}"
     />
   </view>
   <van-cell-group border="{{ false }}">

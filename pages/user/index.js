@@ -15,6 +15,7 @@ Page({
     motto: '用户中心',
     goldNum:6723,
     productList:[],
+    chooseAddress:''
   },
   //事件处理函数
   bindViewTap: function() {
@@ -34,6 +35,33 @@ Page({
     }
 
     // this.indexClassList();
+  },
+
+
+  onChooseAddress(){
+    let t = this;
+    wx.chooseAddress({
+      success (res) {
+        console.log(res.userName)
+        console.log(res.postalCode)
+        console.log(res.provinceName)
+        console.log(res.cityName)
+        console.log(res.countyName)
+        console.log(res.detailInfo)
+        console.log(res.nationalCode)
+        console.log(res.telNumber)
+
+        t.setData({
+            chooseAddress:res.provinceName+res.cityName+res.countyName+res.detailInfo
+        })
+
+      wx.showToast({
+        title: t.chooseAddress,
+        icon:'none'
+      })
+
+      }
+    })
   },
 
   indexClassList() {

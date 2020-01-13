@@ -10,9 +10,20 @@ Page({
         'https://img.yzcdn.cn/public_files/2017/10/24/e5a5a02309a41f9f5def56684808d9ae.jpeg',
     },
   },
-  onLoad() {
+  onLoad(options) {
+    console.log(options);
+    let detail = JSON.parse(options.goodsDetail);
+
+    var obj = Object.assign(this.data.goods, detail.item);
+    this.setData({
+      goods: obj,
+    });
+    console.log(this.data.goods);
+
+
     const { goods } = this.data;
-    const formatPrice = `¥${(goods.price / 100).toFixed(2)}`;
+    // const formatPrice = `¥${(goods.price / 100).toFixed(2)}`;
+    const formatPrice = `¥${(goods.price).toFixed(2)}`;
     this.setData({
       goods: {
         ...goods,
@@ -22,7 +33,7 @@ Page({
   },
 
   onClickCart() {
-    wx.navigateTo({
+    wx.switchTab({
       url: '/pages/cart/index',
       success: () => {},
       error: () => {
@@ -35,7 +46,7 @@ Page({
   },
 
   onClickUser() {
-    wx.navigateTo({
+    wx.switchTab({
       url: '/pages/user/index',
       success: () => {},
       error: () => {

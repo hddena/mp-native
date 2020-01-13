@@ -1,6 +1,6 @@
 <view class="proList">
 
-	<view class="item" wx:for="{{ productList }}" wx:for-item="item"  wx:for-index="idx" wx:key="idx" wx:if="{{ idx < num }}" bindtap="readyProList" data-id="{{idx}}" data-title="{{item.title}}">
+	<view class="item" wx:for="{{ productList }}" wx:for-item="item"  wx:for-index="idx" wx:key="idx" wx:if="{{ idx < num }}" bindtap="readyProList" data-item="{{item}}" data-id="{{idx}}" data-title="{{item.title}}">
 		<view class="imgBox">
 			<van-image
 			  width="100%"

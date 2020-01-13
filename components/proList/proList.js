@@ -53,6 +53,12 @@ Component({
       wx.showToast({
         title: title,
       })
+
+
+    wx.navigateTo({
+      url: '/pages/goods/detail?goodsDetail='+JSON.stringify(e.currentTarget.dataset),
+    });
+
     },
 
   }

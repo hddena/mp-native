@@ -94,7 +94,7 @@
 	  <van-cell title="我的邀请人" is-link />
 	  <van-cell title="收益中心" is-link />
 	  <van-cell title="我的首页" is-link />
-	  <van-cell title="地址管理" is-link />
+	  <van-cell title="地址管理" is-link label="{{chooseAddress}}" bindtap="onChooseAddress"/>
 	  <van-cell title="客服中心" is-link />
 	  <van-cell title="检测登录" is-link bindtap="goToIsLogin"/>
 	</van-cell-group>
